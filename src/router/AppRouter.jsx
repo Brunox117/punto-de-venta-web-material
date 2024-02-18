@@ -1,9 +1,10 @@
-import { Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
+import { MainPage } from "../main/pages/MainPage";
 
 export const AppRouter = () => {
   return (
-    <Routes> 
-        {/* ... */}
+    <Routes>
+      <Route path="/*" element={<MainPage />} />
     </Routes>
-  )
-}
+  );
+};
