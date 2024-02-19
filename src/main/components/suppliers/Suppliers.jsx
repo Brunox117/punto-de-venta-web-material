@@ -6,29 +6,16 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Typography,
   Button,
-  Grid,
 } from "@mui/material";
 import "./Supplier.css"; // Importa los estilos CSS
-import { useDispatch, useSelector } from "react-redux";
-import { setActiveSupplier } from "../../../store/slices/supplierSlice/supplierSlice";
-import { startDeletingSupplierById } from "../../../store/slices/supplierSlice/thunks";
+import { useSelector } from "react-redux";
 
 export const Suppliers = () => {
   const sliderRef = useRef(null); // Referencia al Slider
   const [selectedSupplierIndex, setSelectedSupplierIndex] = useState(-1);
 
-  const dispatch = useDispatch();
   const { suppliers } = useSelector((state) => state.supplier);
-
-  const onEdit = (supplier) => {
-    dispatch(setActiveSupplier(supplier));
-  };
-
-  const onDelete = (supplier) => {
-    dispatch(startDeletingSupplierById(supplier));
-  };
 
   const handleMouseEnter = (index) => {
     setSelectedSupplierIndex(index);
@@ -128,14 +115,6 @@ export const Suppliers = () => {
               >
                 VISITANOS
               </Button>
-            <Grid container justifyContent="space-between" sx={{ padding: 2 }}>
-              <Button variant="contained" onClick={() => onEdit(supplier)}>
-                Editar
-              </Button>
-              <Button variant="contained" onClick={() => onDelete(supplier)}>
-                Borrar
-              </Button>
-            </Grid>
             </CardContent>
           </Card>
         </div>

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardMedia, Typography, Grid, Button } from "@mui/material";
 
-export const Category = ({ category, onEdit, onDelete }) => {
+export const Category = ({ category }) => {
   const { name, imageUrl } = category;
 
   return (
@@ -18,10 +18,6 @@ export const Category = ({ category, onEdit, onDelete }) => {
           {name}
         </Typography>
       </CardContent>
-      <Grid container justifyContent="space-between" sx={{ padding: 2 }}>
-        <Button variant="contained" style={{ borderRadius: 20, backgroundColor: '#f77e0a', color: '#fff', marginTop: 10 }} onClick={() => onEdit(category)}>Editar</Button>
-        <Button variant="contained" style={{ borderRadius: 20, backgroundColor: '#f77e0a', color: '#fff', marginTop: 10 }} onClick={() => onDelete(category)}>Borrar</Button>
-      </Grid>
     </Card>
             </Grid>
   );

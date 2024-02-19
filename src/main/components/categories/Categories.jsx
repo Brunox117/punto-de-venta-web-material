@@ -1,9 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  setActiveCategory,
-  startDeletingCategoryById,
-} from "../../../store/slices/categorySlice";
-import { Button, Grid } from "@mui/material";
+import { useSelector } from "react-redux";
+import { Grid } from "@mui/material";
 import { Category } from "./Category";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -14,14 +10,8 @@ export const Categories = () => {
   const sliderRef = useRef(null); // Referencia al Slider
   const [selectedSupplierIndex, setSelectedSupplierIndex] = useState(-1);
 
-  const dispatch = useDispatch();
-  const { categories } = useSelector((state) => state.category);
-  const onEdit = (category) => {
-    dispatch(setActiveCategory(category));
-  };
-  const onDelete = (category) => {
-    dispatch(startDeletingCategoryById(category));
-  };
+  const { categories } = useSelector((state) => state.firebase);
+
   const handleMouseEnter = (index) => {
     setSelectedSupplierIndex(index);
   };
@@ -71,7 +61,7 @@ export const Categories = () => {
       }}>
         {categories.map((category) => (
           <Grid item key={category.id} xs={12} sm={6} md={4} lg={3} xl={2}>
-            <Category category={category} onEdit={onEdit} onDelete={onDelete} />
+            <Category category={category}/>
           </Grid>
         ))}
         

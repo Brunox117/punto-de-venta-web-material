@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Grid } from "@mui/material";
 import { Product } from "./Product";
 
-
 export const Products = () => {
   const { products } = useSelector((state) => state.firebase);
   return (

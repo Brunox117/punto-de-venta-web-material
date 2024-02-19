@@ -3,7 +3,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-export const Branch = ({branch, onEdit, onDelete}) => {
+export const Branch = ({branch}) => {
   const openLinkInNewTab = (url) => {
     const fullUrl = url.startsWith('http://') || url.startsWith('https://') ? url : 'https://' + url;
     window.open(fullUrl, "_blank");
@@ -49,10 +49,6 @@ export const Branch = ({branch, onEdit, onDelete}) => {
           </Grid>
         </Grid>
       </CardContent>
-      <Grid container justifyContent="space-between" sx={{ padding: 2 }}>
-          <Button variant="contained" style={{ borderRadius: 20, backgroundColor: '#f77e0a', color: '#fff', marginTop: 10 }} onClick={() => onEdit(branch)}>Editar</Button>
-          <Button variant="contained" style={{ borderRadius: 20, backgroundColor: '#f77e0a', color: '#fff', marginTop: 10 }} onClick={() => onDelete(branch)}>Borrar</Button>
-          </Grid>
     </Card>
   );
 };
