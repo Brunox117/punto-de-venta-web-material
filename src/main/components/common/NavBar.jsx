@@ -1,126 +1,134 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  makeStyles,
+  IconButton,
+  Grid,
+  Hidden,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import { Link } from 'react-router-dom';
 
-const routes = ["inicio", "productos", "abarrotips"];
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  navButton: {
+    marginLeft: theme.spacing(3),
+    transition: 'transform 0.2s',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  },
+  phoneNumber: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'right',
+    color: '#333',
+  },
+  logoContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'left',
+  },
+  appBar: {
+    backgroundColor: "#fdcc49",
+    height: '80px',
+  },
+  navButtonText: {
+    marginTop: '20px',
+    marginBottom: '20px',
+    color: "#000",
+  },
+  drawerPaper: {
+    width: 240,
+  },
+}));
 
 export const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
+  const classes = useStyles();
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
   };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+
+  const navLinks = [
+    { title: 'Inicio', path: '/' },
+    { title: 'Productos', path: '/productos' },
+    { title: 'AbarroTips', path: '/abarrotips' },
+    { title: 'Sobre Nosotros', path: '/about-us' },
+  ];
+
+  const listItems = (
+    <List>
+      {navLinks.map((link, index) => (
+        <ListItem button key={index} component={Link} to={link.path}>
+          <ListItemText primary={link.title} />
+        </ListItem>
+      ))}
+    </List>
+  );
+
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {routes.map((route) => (
-                <Link
-                  key={route}
-                  to={`/${route}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography
-                      sx={{
-                        mr: 2,
-                        display: { xs: "flex", md: "none" },
-                        flexGrow: 1,
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        color: "black",
-                        textDecoration: "none",
-                        textTransform: "uppercase",
-                      }}
-                      textAlign="center"
-                    >
-                      {route}
-                    </Typography>
-                  </MenuItem>
-                </Link>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            PUNTO DE VENTA
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {routes.map((route) => (
-              <Link
-                key={route}
-                to={`/${route}`}
-                style={{ textDecoration: "none" }}
-              >
-                <Button
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    display: "block",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {route}
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Grid container alignItems="center">
+            <Grid item xs={6} md={2} className={classes.logoContainer}>
+              <img src="src\assets\img\LOGO SIN FONDO VERSION NUEVA (1).png" alt="Logo" style={{ height: '60px', marginRight: 'auto', marginLeft: '0px' }} />
+            </Grid>
+            <Hidden mdDown>
+              <Grid item xs={6} md={7} style={{ textAlign: 'left'}}>
+                <Button component={Link} to="/" color="inherit" className={classes.navButton}>
+                  <Typography className={classes.navButtonText}>Inicio</Typography>
                 </Button>
-              </Link>
-            ))}
-          </Box>
+                <Button component={Link} to="/productos" color="inherit" className={classes.navButton}>
+                  <Typography className={classes.navButtonText}>Productos</Typography>
+                </Button>
+                <Button component={Link} to="/abarrotips" color="inherit" className={classes.navButton}>
+                  <Typography className={classes.navButtonText}>AbarroTips</Typography>
+                </Button>
+                <Button component={Link} to="/about-us" color="inherit" className={classes.navButton}>
+                  <Typography className={classes.navButtonText}>Sobre Nosotros</Typography>
+                </Button>
+              </Grid>
+            </Hidden>
+            <Hidden smDown>
+              <Grid item xs={6} md={3} className={classes.phoneNumber}>
+                <Typography variant="body1">123-456-7890</Typography>
+                <IconButton color="inherit">
+                  <WhatsAppIcon />
+                </IconButton>
+              </Grid>
+            </Hidden>
+            <Hidden mdUp>
+              <Grid item xs={6} md={2} style={{ textAlign: 'right', marginBottom: "20px", marginTop: "20px"}}>
+                <IconButton edge="start" color="000" aria-label="menu" onClick={toggleDrawer}>
+                  <MenuIcon />
+                </IconButton>
+                <Drawer
+                  anchor="right"
+                  open={drawerOpen}
+                  onClose={toggleDrawer}
+                  classes={{ paper: classes.drawerPaper }}
+                >
+                  {listItems}
+                </Drawer>
+              </Grid>
+            </Hidden>
+          </Grid>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+    </div>
   );
 };
