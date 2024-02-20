@@ -1,9 +1,7 @@
-import { useSelector } from "react-redux";
 import { Grid } from "@mui/material";
 import { Product } from "./Product";
 
-export const Products = () => {
-  const { products } = useSelector((state) => state.firebase);
+export const Products = ({products}) => {
   return (
       <Grid container justifyContent="center" sx={{
         padding: {
