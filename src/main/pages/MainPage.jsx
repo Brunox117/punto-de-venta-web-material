@@ -8,7 +8,7 @@ export const MainPage = () => {
       <div style={{ backgroundColor: "#f5e8db"}}>
       <NavBar />
       <div style={{ backgroundColor: "#c4885d", height: '2px', opacity: '50%'}} />
-      <div style={{ margin: '40px'}}>
+      <div style={{ marginLeft: '40px', marginRight: '40px', marginTop: '40px'}}>
       <MainRoutes />
       </div>
       </div>

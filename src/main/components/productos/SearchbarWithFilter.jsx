@@ -35,6 +35,7 @@ export const SearchbarWithFilter = ({ searchProducts, categories }) => {
     <div className={classes.root}>
       <div className={classes.searchInput}>
         <SearchBar
+          onCancelSearch={() => handleSearchChange("")}
           placeholder="Buscar por nombre"
           value={searchValue}
           onChange={handleSearchChange}
@@ -43,6 +44,7 @@ export const SearchbarWithFilter = ({ searchProducts, categories }) => {
       <FormControl variant="outlined">
         <InputLabel id="category-label">Filtrar por categoría</InputLabel>
         <Select
+          sx={{minWidth: 200}}
           labelId="category-label"
           value={selectedCategory}
           onChange={handleCategoryChange}

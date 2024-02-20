@@ -8,6 +8,8 @@ import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: 30,
+   backgroundColor: "#f5e8db",
+   minHeight: "100vh",
   },
 }));
 
