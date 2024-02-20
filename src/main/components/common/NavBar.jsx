@@ -70,7 +70,8 @@ export const NavBar = () => {
     { title: 'Inicio', path: '/' },
     { title: 'Productos', path: '/productos' },
     { title: 'AbarroTips', path: '/abarrotips' },
-    { title: 'Sobre Nosotros', path: '/about-us' },
+    { title: 'Sucursales', path: '/sucursales' },
+    { title: 'Sobre Nosotros', path: '/nosotros' },
   ];
 
   const listItems = (
@@ -102,7 +103,10 @@ export const NavBar = () => {
                 <Button component={Link} to="/abarrotips" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>AbarroTips</Typography>
                 </Button>
-                <Button component={Link} to="/about-us" style={{ color: '#c4885d' }} className={classes.navButton}>
+                <Button component={Link} to="/sucursales" style={{ color: '#c4885d' }} className={classes.navButton}>
+                  <Typography className={classes.navButtonText}>Sucursales</Typography>
+                </Button>
+                <Button component={Link} to="/nosotros" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>Sobre Nosotros</Typography>
                 </Button>
               </Grid>

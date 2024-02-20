@@ -72,9 +72,8 @@ export const Banners = () => {
           }}>
             <CardMedia 
             component="img" 
-            height='426px'
             image={banner.imageUrl} 
-            style={{ objectFit: "fill", width: "100%" }} // Ajusta la imagen al tamaño del contenedor sin recortarla
+            style={{ objectFit: "fill", width: "100%", justifyContent: 'center' ,height: "576px" }} // Ajusta la imagen al tamaño del contenedor sin recortarla
           />
           </Card>
         ))}
