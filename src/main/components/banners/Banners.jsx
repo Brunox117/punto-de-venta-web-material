@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
-import { Card, CardMedia } from "@mui/material";
+import { Card, CardMedia, Grid } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 function SampleNextArrow(props) {
@@ -62,6 +62,8 @@ export const Banners = () => {
     nextArrow: <SampleNextArrow />,
   };
   return (
+    <Grid item sx={{background: '#e8d8c8'}}>
+
     <div className="slider-container">
       <Slider {...settings}>
         {banners.map((banner) => (
@@ -71,5 +73,6 @@ export const Banners = () => {
         ))}
       </Slider>
     </div>
+        </Grid>
   );
 };

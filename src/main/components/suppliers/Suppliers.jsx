@@ -7,6 +7,7 @@ import {
   CardContent,
   CardMedia,
   Button,
+  Grid,
 } from "@mui/material";
 import "./Supplier.css"; // Importa los estilos CSS
 import { useSelector } from "react-redux";
@@ -15,7 +16,7 @@ export const Suppliers = () => {
   const sliderRef = useRef(null); // Referencia al Slider
   const [selectedSupplierIndex, setSelectedSupplierIndex] = useState(-1);
 
-  const { suppliers } = useSelector((state) => state.supplier);
+  const { suppliers } = useSelector((state) => state.firebase);
 
   const handleMouseEnter = (index) => {
     setSelectedSupplierIndex(index);
@@ -57,68 +58,90 @@ export const Suppliers = () => {
   };
 
   return (
-    <Slider {...settings} ref={sliderRef}>
-      {suppliers.map((supplier, index) => (
-        <div key={index}>
-          <Card
-            justifycontent="center"
-            key={index}
-            className={`supplier-card ${
-              index === sliderRef.current?.slickCurrentSlide ||
-              index === selectedSupplierIndex
-                ? "supplier-centered"
-                : ""
-            }`}
-            sx={{
-              borderRadius: "8px",
-              boxShadow: "none",
-              width: "100%",
-              mt: 2,
-              mb: 2,
-            }}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifycontent: "center",
-                alignItems: "center",
-              }}
-            >
-              <CardMedia
-                component="img"
-                sx={{
-                  borderRadius: "8px",
-                  height: 500,
-                  width: 450,
-                  objectFit: "cover",
-                  alignItems: "center", // Centra la imagen verticalmente
-                  justifycontent: "center", // Centra la imagen horizontalmente
-                }}
-                image={supplier.imageUrl}
-                title={supplier.name}
-              />
-            </div>
-            <CardContent
+    <Grid item sx={{ justifyContent: "center", background: '#e8d8c8', marginTop: '5'}}>
+      <Slider {...settings} ref={sliderRef} arrows={false}>
+        {suppliers.map((supplier, index) => (
+          <div key={index}>
+            <Card
+              key={index}
+              className={`supplier-card ${
+                index === sliderRef.current?.slickCurrentSlide ||
+                index === selectedSupplierIndex
+                  ? "supplier-centered"
+                  : ""
+              }`}
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
+                backgroundColor: '#e8d8c8', // Color de fondo del Card
+                borderRadius: "8px",
+                boxShadow: "none",
+                width: "100%",
+                mt: 2,
+                mb: 2,
               }}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             >
-              <Button
-                variant="outlined"
-                color="success"
-                onClick={() => openLinkInNewTab(supplier.siteLink)}
-                sx={{ borderRadius: 20, width: "40%" }}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
-                VISITANOS
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      ))}
-    </Slider>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    borderRadius: "8px",
+                    height: 500,
+                    width: 450,
+                    objectFit: "cover",
+                  }}
+                  image={supplier.imageUrl}
+                  title={supplier.name}
+                />
+              </div>
+              <CardContent
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Button
+  variant="outlined"
+  onClick={() => openLinkInNewTab(supplier.siteLink)}
+  sx={{
+    fontWeight: 'bold',
+    borderColor: 'secondary.main',
+    backgroundColor: 'transparent', // Cambiado de bgcolor a backgroundColor
+    color: 'secondary.main',
+    borderRadius: 20,
+    width: "40%",
+    '&:hover': {
+      backgroundColor: '#f77e0a',
+      borderColor: '#f77e0a',
+      color: 'white',
+    },
+  }}
+>
+  VISITANOS
+</Button>
+
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+      <style>
+        {`
+          .slick-dots li button:before {
+            color: #f77e0a !important;
+          }
+          .slick-dots li.slick-active button:before {
+            color: #f77e0a !important;
+          }
+        `}
+      </style>
+    </Grid>
   );
 };

@@ -4,7 +4,9 @@ import {
   startLoadingBanners,
   startLoadingBranches,
   startLoadingCategories,
+  startLoadingPosts,
   startLoadingProducts,
+  startLoadingSuppliers,
 } from "../../store/slices/firebaseSlice/thunks";
 
 export const useCategories = () => {
@@ -35,14 +37,14 @@ export const useBranches = () => {
   }, []);
 };
 
-export const startLoadingSuppliers = () => {
+export const useSuppliers = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startLoadingSuppliers());
   }, []);
 };
 
-export const startLoadingPosts = () => {
+export const usePosts = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startLoadingPosts());

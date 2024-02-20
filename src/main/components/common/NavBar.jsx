@@ -33,7 +33,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'right',
-    color: '#333',
+    color: '#c4885d',
+    fontSize: '5px', // Tamaño de fuente más grande
+    fontWeight: 'bold', // Negritas
   },
   logoContainer: {
     display: 'flex',
@@ -41,13 +43,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'left',
   },
   appBar: {
-    backgroundColor: "#fdcc49",
+    backgroundColor: "#e8d8c8",
     height: '80px',
   },
   navButtonText: {
     marginTop: '20px',
     marginBottom: '20px',
     color: "#000",
+    fontSize: '1.5em', // Tamaño de fuente más grande
+    fontWeight: 'bold', // Negritas
   },
   drawerPaper: {
     width: 240,
@@ -81,7 +85,7 @@ export const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position="static" className={classes.appBar} elevation={0}>
         <Toolbar>
           <Grid container alignItems="center">
             <Grid item xs={6} md={2} className={classes.logoContainer}>
@@ -89,16 +93,16 @@ export const NavBar = () => {
             </Grid>
             <Hidden mdDown>
               <Grid item xs={6} md={7} style={{ textAlign: 'left'}}>
-                <Button component={Link} to="/" color="inherit" className={classes.navButton}>
+                <Button component={Link} to="/" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>Inicio</Typography>
                 </Button>
-                <Button component={Link} to="/productos" color="inherit" className={classes.navButton}>
+                <Button component={Link} to="/productos" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>Productos</Typography>
                 </Button>
-                <Button component={Link} to="/abarrotips" color="inherit" className={classes.navButton}>
+                <Button component={Link} to="/abarrotips" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>AbarroTips</Typography>
                 </Button>
-                <Button component={Link} to="/about-us" color="inherit" className={classes.navButton}>
+                <Button component={Link} to="/about-us" style={{ color: '#c4885d' }} className={classes.navButton}>
                   <Typography className={classes.navButtonText}>Sobre Nosotros</Typography>
                 </Button>
               </Grid>
@@ -106,15 +110,15 @@ export const NavBar = () => {
             <Hidden smDown>
               <Grid item xs={6} md={3} className={classes.phoneNumber}>
                 <Typography variant="body1">123-456-7890</Typography>
-                <IconButton color="inherit">
-                  <WhatsAppIcon />
+                <IconButton>
+                  <WhatsAppIcon style={{ color: '#c4885d' }} />
                 </IconButton>
               </Grid>
             </Hidden>
             <Hidden mdUp>
               <Grid item xs={6} md={2} style={{ textAlign: 'right', marginBottom: "20px", marginTop: "20px"}}>
-                <IconButton edge="start" color="000" aria-label="menu" onClick={toggleDrawer}>
-                  <MenuIcon />
+                <IconButton edge="start" aria-label="menu" onClick={toggleDrawer}>
+                  <MenuIcon style={{ color: '#c4885d' }} />
                 </IconButton>
                 <Drawer
                   anchor="right"

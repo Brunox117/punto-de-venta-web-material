@@ -43,28 +43,37 @@ export const Categories = () => {
     swipeToSlide: true,
   };
   return (
-      <Grid container justifyContent="center" sx={{
-        padding: {
-          xs: 0, // Para tamaños de pantalla extra pequeños
-          sm: 2, // Para tamaños de pantalla pequeños
-          md: 12, // Para tamaños de pantalla medianos
-          lg: 4, // Para tamaños de pantalla grandes
-          xl: 5 // Para tamaños de pantalla extra grandes
-        },
-        ml: {
-          xs: 12, // Margen izquierdo para tamaños de pantalla extra pequeños
-          sm: 3, // Margen izquierdo para tamaños de pantalla pequeños
-          md: 4, // Margen izquierdo para tamaños de pantalla medianos
-          lg: 5, // Margen izquierdo para tamaños de pantalla grandes
-          xl: 4 // Margen izquierdo para tamaños de pantalla extra grandes
-        }
-      }}>
-        {categories.map((category) => (
-          <Grid item key={category.id} xs={12} sm={6} md={4} lg={3} xl={2}>
-            <Category category={category}/>
-          </Grid>
-        ))}
-        
-      </Grid>
+    <div style={{ backgroundColor: "#e8d8c8"}}>
+
+
+      <Grid
+  container
+  justifyContent="center"
+  alignItems="center"
+  sx={{
+    padding: {
+      xs: 0,
+      sm: 2,
+      md: 12,
+      lg: 4,
+      xl: 5
+    },
+    ml: {
+      xs: 12,
+      sm: 3,
+      md: 4,
+      lg: 5,
+      xl: 4
+    }
+  }}
+>
+  {categories.map((category) => (
+    <Grid item key={category.id} xs={12} sm={6} md={4} lg={3} xl={2}>
+      <Category category={category}/>
+    </Grid>
+  ))}
+</Grid>
+  </div>
+
   );
 };

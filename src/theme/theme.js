@@ -14,5 +14,14 @@ export const theme = createTheme({
     error: {
       main: red.A400,
     },
+    background: {
+      main: '#e8d8c8'
+    },
+    cardbg: {
+      main: '#c4885d'
+    },
+    fonts: {
+      main: '#b07034'
+    },
   },
 });
