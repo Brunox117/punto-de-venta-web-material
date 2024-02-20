@@ -58,7 +58,7 @@ export const Suppliers = () => {
   };
 
   return (
-    <Grid item sx={{ justifyContent: "center", background: '#e8d8c8', marginTop: '5'}}>
+    <Grid item sx={{ justifyContent: "center", background: '#f5e8db', marginTop: '5'}}>
       <Slider {...settings} ref={sliderRef} arrows={false}>
         {suppliers.map((supplier, index) => (
           <div key={index}>
@@ -71,7 +71,7 @@ export const Suppliers = () => {
                   : ""
               }`}
               sx={{
-                backgroundColor: '#e8d8c8', // Color de fondo del Card
+                backgroundColor: '#f5e8db', // Color de fondo del Card
                 borderRadius: "8px",
                 boxShadow: "none",
                 width: "100%",

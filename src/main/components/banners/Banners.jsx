@@ -62,13 +62,15 @@ export const Banners = () => {
     nextArrow: <SampleNextArrow />,
   };
   return (
-    <Grid item sx={{background: '#e8d8c8'}}>
+    <Grid item sx={{background: '#f5e8db'}}>
 
     <div className="slider-container">
       <Slider {...settings}>
         {banners.map((banner) => (
-          <Card key={banner.id} className="banner-card">
-            <CardMedia component="img" height="425" image={banner.imageUrl} />
+          <Card key={banner.id} className="banner-card" sx={{
+            borderRadius: "12px", // Aplica un borde redondeado de 8px al CardMedia
+          }}>
+            <CardMedia component="img" height="425" image={banner.imageUrl}  />
           </Card>
         ))}
       </Slider>

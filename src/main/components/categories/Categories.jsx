@@ -43,7 +43,7 @@ export const Categories = () => {
     swipeToSlide: true,
   };
   return (
-    <div style={{ backgroundColor: "#e8d8c8"}}>
+    <div style={{ backgroundColor: "#f5e8db"}}>
 
 
       <Grid
