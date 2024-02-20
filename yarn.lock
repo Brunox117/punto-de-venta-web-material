@@ -2723,10 +2723,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-material-ui-search-bar@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/material-ui-search-bar/-/material-ui-search-bar-1.0.1.tgz#c3a8cf78e338b0358c4c9a4b433af7ef717cf3bc"
-  integrity sha512-dvT11lnEZ/qw0Ipd+1IT+upx540Xs07LbUL+hLLteofc/PYePPgGEGsya27UQDkjhAM/jjDeVyOGgzT6LycYWg==
+material-ui-search-bar@^1.0.0-beta.14:
+  version "1.0.0-beta.14"
+  resolved "https://registry.yarnpkg.com/material-ui-search-bar/-/material-ui-search-bar-1.0.0-beta.14.tgz#6ab53f3c2c58c0c634b13a96f7ebaf068dcbb27e"
+  integrity sha512-K4i4iUi0Dp+iEvcAFc/KmDBS4kOtEY0Kh5ID1RX884PMhKMT9rIJcKkhPhThYPji4cCXc1pz8t5F54VMbhLmcw==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"

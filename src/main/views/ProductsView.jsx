@@ -9,77 +9,53 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: 30,
   },
-  paper: {
-    marginBottom: 30,
-  },
   flex: {
     display: "flex",
     justifyContent: "space-between",
-  },
-  toolbar: {
-    justifyContent: "space-between",
+    marginBottom: 20,
   },
 }));
 
 export const ProductsView = () => {
   const [products, setProducts] = useState([]);
-  const [searchProduct, setsearchProduct] = useState([]);
-  const {products: productsFromFirebase} = useSelector((state) => state.firebase);
-  const setProductsFromFirebase = () => {
-    setsearchProduct(productsFromFirebase);
-    setProducts(productsFromFirebase);
+  const [searchProduct, setSearchProduct] = useState([]);
+  const { products: productsFromFirebase, categories } = useSelector((state) => state.firebase);
+
+  const filterProducts = (filterTerm, searchTerm) => {
+    if (filterTerm === "" && searchTerm === "") {
+      setSearchProduct(products); // Mostrar todos los productos si no hay un término de filtro ni de búsqueda
+      return;
+    }
+    let filteredProducts = [...products];
+    if (filterTerm !== "") {
+      filteredProducts = filteredProducts.filter(product =>
+        product.categories.includes(filterTerm)
+      );
+    }
+    if (searchTerm !== "") {
+      const normalizedSearchTerm = searchTerm.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Normalizar el término de búsqueda
+      filteredProducts = filteredProducts.filter(product => {
+        const normalizedProductName = product.name.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Normalizar el nombre del producto
+        return normalizedProductName.includes(normalizedSearchTerm);
+      });
+    }
+    setSearchProduct(filteredProducts);
   };
 
   useEffect(() => {
-    setProductsFromFirebase();
+    setProducts(productsFromFirebase);
+    setSearchProduct(productsFromFirebase);
   }, [productsFromFirebase]);
 
-  
-
-  const filterProducts = (filterTerm) => {
-    var filter = [...products];
-    filter = filter.filter((product) => product.categories.includes(filterTerm));
-    setsearchProduct(filter);
-    console.log('searchProduct: ', searchProduct);
-  };
-
-  const searchProducts = (searchTerm) => {
-    var search = [...products];
-    search = search.filter((a) => {
-      console.log(a);
-      let b = a.name.toLowerCase().includes(searchTerm.toLowerCase());
-      let c = a.population
-        .toString()
-        .includes(searchTerm.toLowerCase().replaceAll(",", ""));
-      let d = a.region.toLowerCase().includes(searchTerm.toLowerCase());
-      console.log(a);
-      let test = "";
-
-      if (b) {
-        test += a.name.toLowerCase().includes(searchTerm.toLowerCase());
-      }
-      if (c) {
-        test += a.population
-          .toString()
-          .includes(searchTerm.toLowerCase().replaceAll(",", ""));
-      }
-      if (d) {
-        test += a.region.toLowerCase().includes(searchTerm.toLowerCase());
-      }
-      // console.log(test);
-      return test;
-    });
-    setsearchProduct(search);
-  };
-
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <div className={classes.flex}>
-        <Searchbar searchProducts={searchProducts} />
-        <Filter filterProducts={filterProducts} />
+        <Searchbar searchProducts={filterProducts} />
+        <Filter filterProducts={filterProducts} categories={categories} />
       </div>
-      {/* <Products products={searchProduct} /> */}
+      <Products products={searchProduct} />
     </div>
   );
 };
