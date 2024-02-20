@@ -68,9 +68,14 @@ export const Banners = () => {
       <Slider {...settings}>
         {banners.map((banner) => (
           <Card key={banner.id} className="banner-card" sx={{
-            borderRadius: "12px", // Aplica un borde redondeado de 8px al CardMedia
+            borderRadius: "12px",
           }}>
-            <CardMedia component="img" height="425" image={banner.imageUrl}  />
+            <CardMedia 
+            component="img" 
+            height='426px'
+            image={banner.imageUrl} 
+            style={{ objectFit: "fill", width: "100%" }} // Ajusta la imagen al tamaño del contenedor sin recortarla
+          />
           </Card>
         ))}
       </Slider>
