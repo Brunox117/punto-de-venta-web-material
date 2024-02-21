@@ -44,7 +44,7 @@ export const SearchbarWithFilter = ({ searchProducts, categories }) => {
       <FormControl variant="outlined">
         <InputLabel id="category-label">Filtrar por categoría</InputLabel>
         <Select
-          sx={{minWidth: 200}}
+          sx={{ minWidth: 200 }}
           labelId="category-label"
           value={selectedCategory}
           onChange={handleCategoryChange}

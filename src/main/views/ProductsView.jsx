@@ -5,34 +5,42 @@ import { Products } from "../components/productos/Products";
 import { useSelector } from "react-redux";
 import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     padding: 30,
-   backgroundColor: "#f5e8db",
-   minHeight: "100vh",
+    backgroundColor: "#f5e8db",
+    minHeight: "100vh",
   },
 }));
 
 export const ProductsView = () => {
-  const [products, setProducts] = useState([]);
   const [searchProduct, setSearchProduct] = useState([]);
-  const { products: productsFromFirebase, categories } = useSelector((state) => state.firebase);
+  const { products: productsFromFirebase, categories } = useSelector(
+    (state) => state.firebase
+  );
 
   useEffect(() => {
-    setProducts(productsFromFirebase);
     setSearchProduct(productsFromFirebase);
   }, [productsFromFirebase]);
 
   const filterProducts = (searchTerm, category) => {
-    let filteredProducts = [...productsFromFirebase];
+    let filteredProducts = productsFromFirebase;
 
     if (searchTerm) {
-      const normalizedSearchTerm = searchTerm.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      filteredProducts = filteredProducts.filter(product => product.name.toLowerCase().includes(normalizedSearchTerm));
+      const normalizedSearchTerm = searchTerm
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      filteredProducts = filteredProducts.filter((product) =>
+        product.name.toLowerCase().includes(normalizedSearchTerm)
+      );
     }
 
     if (category) {
-      filteredProducts = filteredProducts.filter(product => product.categories.includes(category));
+      filteredProducts = filteredProducts.filter((product) =>
+        product.categories.includes(category)
+      );
     }
 
     setSearchProduct(filteredProducts);
@@ -42,7 +50,10 @@ export const ProductsView = () => {
 
   return (
     <div className={classes.root}>
-      <SearchbarWithFilter searchProducts={filterProducts} categories={categories} />
+      <SearchbarWithFilter
+        searchProducts={filterProducts}
+        categories={categories}
+      />
       <Products products={searchProduct} />
     </div>
   );
