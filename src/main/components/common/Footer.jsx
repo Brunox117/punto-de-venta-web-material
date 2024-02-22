@@ -46,7 +46,9 @@ export const Footer = () => {
     <div className={classes.root}>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>LOGO</Grid>
-        <Grid item>REDES SOCIALES</Grid>
+        <Grid item>
+          
+        </Grid>
         <Grid item>NUMERO DE TELEFONO</Grid>
       </Grid>
     </div>

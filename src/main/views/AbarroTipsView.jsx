@@ -1,5 +1,7 @@
+import { Posts } from "../components/posts/Posts"
+
 export const AbarroTipsView = () => {
   return (
-    <div>AbarroTipsView</div>
+    <Posts />
   )
 }
