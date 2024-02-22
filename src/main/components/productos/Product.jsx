@@ -4,7 +4,7 @@ export const Product = ({ product}) => {
   const { name, price, imageUrl, categories } = product;
 
   return (
-    <Grid item xs={6} sm={6} md={6} lg={10} sx={{mt: 4}}>
+    <Grid item xs={6} sm={10} md={10} lg={10} sx={{mt: 4}}>
     <Card sx={{ borderRadius: '8px', boxShadow: 4, backgroundColor: '#faf5ee'}}>
        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <CardMedia

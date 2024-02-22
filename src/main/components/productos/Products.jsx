@@ -8,7 +8,7 @@ export const Products = ({products}) => {
           xs: 0, // Para tamaños de pantalla extra pequeños
           sm: 2, // Para tamaños de pantalla pequeños
           md: 12, // Para tamaños de pantalla medianos
-          lg: 4, // Para tamaños de pantalla grandes
+          lg: 3, // Para tamaños de pantalla grandes
           xl: 5 // Para tamaños de pantalla extra grandes
         },
         ml: {
@@ -20,7 +20,7 @@ export const Products = ({products}) => {
         }
       }}>
         {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} xl={2}>
+          <Grid item key={product.id} xs={12} sm={8} md={6} lg={3} xl={2}>
             <Product product={product}/>
           </Grid>
         ))}

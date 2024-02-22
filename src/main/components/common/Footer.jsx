@@ -1,4 +1,4 @@
-import { Grid, makeStyles } from "@material-ui/core";
+import { CardMedia, Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,10 +45,10 @@ export const Footer = () => {
   return (
     <div className={classes.root}>
       <Grid container justifyContent="space-between" alignItems="center">
-        <Grid item>LOGO</Grid>
         <Grid item>
-          
+          <CardMedia image="https://images-ext-2.discordapp.net/external/si8K-NoJTR8WFbiUL9zps1hsfIPf8bY_OA_FF4Qfcfo/%3Falt%3Dmedia%26token%3Ddb38230d-ab6e-4ec2-83ff-2fb4c656ae68/https/firebasestorage.googleapis.com/v0/b/punto-de-venta-web-881ad.appspot.com/o/abarrotito.png?format=webp&quality=lossless&width=603&height=661"></CardMedia>
         </Grid>
+        <Grid item></Grid>
         <Grid item>NUMERO DE TELEFONO</Grid>
       </Grid>
     </div>
