@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography, Grid, Button } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
 
 export const Category = ({ category }) => {
   const { name, imageUrl } = category;

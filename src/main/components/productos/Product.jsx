@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography, Chip, Grid, Button } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Chip, Grid } from "@mui/material";
 
 export const Product = ({ product}) => {
   const { name, price, imageUrl, categories } = product;

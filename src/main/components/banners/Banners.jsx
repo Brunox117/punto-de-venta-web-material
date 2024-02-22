@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { Card, CardMedia, Grid } from "@mui/material";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;

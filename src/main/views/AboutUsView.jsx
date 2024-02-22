@@ -1,9 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Facebook, Instagram } from "@material-ui/icons";
 import { Card, CardContent, Grid, Typography } from "@mui/material";
-import { FacebookSVGL } from "../components/svg-links/FacebookSVGL";
-import { InstagramSVGL } from "../components/svg-links/InstagramSVGL";
-import { TiktokSVGL } from "../components/svg-links/TiktokSVGL";
 
 const useStyles = makeStyles(() => ({
   root: {
