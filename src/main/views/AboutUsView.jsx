@@ -14,6 +14,11 @@ const useStyles = makeStyles(() => ({
     color: "#c4885d",
     fontWeight: "bold",
   },
+  link: {
+    color: "inherit", // Reestablece el color predeterminado del texto del enlace
+    textDecoration: "inherit", // Reestablece el estilo de subrayado predeterminado
+    fontSize: "inherit", // Reestablece el tamaño de fuente predeterminado
+  },
 }));
 
 export const AboutUsView = () => {
@@ -42,24 +47,26 @@ export const AboutUsView = () => {
               nuestro compromiso de ser aliados para las ganancias de nuestros
               clientes.
             </Typography>
-          </CardContent>
-        </Card>
-        <Card
-          sx={{
-            borderRadius: "10px",
-            backgroundColor: "#faf5ee",
-            margin: "2px",
-          }}
-        >
-          <CardContent>
             <Typography gutterBottom variant="h4" className={classes.title}>
               Encuentranos en
             </Typography>
-            <a href="https://web.facebook.com/TuPuntodeVenta/">
-              <Facebook />
+            <a
+              href="https://web.facebook.com/TuPuntodeVenta/"
+              className={classes.link}
+            >
+              <Facebook style={{ color: "#c4885d", fontSize: "60px" }} />
+              <Typography gutterBottom variant="h6" sx={{ color: "#c4885d" }}>
+                @TuPuntodeVenta
+              </Typography>
             </a>
-            <a href="https://www.instagram.com/tiendapuntodeventa/">
-              <Instagram />
+            <a
+              href="https://www.instagram.com/tiendapuntodeventa/"
+              className={classes.link}
+            >
+              <Instagram style={{ color: "#c4885d", fontSize: "60px" }} />
+              <Typography gutterBottom variant="h6" sx={{ color: "#c4885d" }}>
+                @tiendapuntodeventa
+              </Typography>
             </a>
           </CardContent>
         </Card>
