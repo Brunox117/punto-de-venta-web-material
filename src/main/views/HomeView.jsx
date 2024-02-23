@@ -3,7 +3,6 @@ import { Categories } from "../components/categories/Categories";
 import { Suppliers } from "../components/suppliers/Suppliers";
 import { Subscribe } from "../components/common/Subscribe";
 import { Promos } from "../components/promos/Promos";
-import { Title } from "../components/titles/Title";
 
 export const HomeView = () => {
   return (
@@ -16,7 +15,7 @@ export const HomeView = () => {
 
       <Categories />
 
-      <Subscribe />
+      {/* <Subscribe /> */}
     </>
   );
 };
