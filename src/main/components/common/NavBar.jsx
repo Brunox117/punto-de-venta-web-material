@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 0,
+    flexGrow: 1,
   },
   navButton: {
     marginLeft: theme.spacing(3),
