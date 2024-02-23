@@ -89,7 +89,7 @@ export const NavBar = () => {
         <Toolbar>
           <Grid container alignItems="center">
             <Grid item xs={6} md={2} className={classes.logoContainer}>
-              <img src="src\assets\img\LOGO SIN FONDO VERSION NUEVA (1).png" alt="Logo" style={{ height: '60px', marginRight: 'auto', marginLeft: '0px' }} />
+              <img src="https://firebasestorage.googleapis.com/v0/b/punto-de-venta-web-881ad.appspot.com/o/puntodeventaLOGO.png?alt=media&token=3aa59e83-d74b-42c1-b246-ec2817aee931" alt="Logo" style={{ height: '60px', marginRight: 'auto', marginLeft: '0px' }} />
             </Grid>
             <Hidden mdDown>
               <Grid item xs={6} md={7} style={{ textAlign: 'left'}}>

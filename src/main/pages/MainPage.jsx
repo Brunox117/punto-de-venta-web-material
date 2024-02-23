@@ -19,6 +19,7 @@ export const MainPage = () => {
           style={{ marginLeft: "40px", marginRight: "40px", marginTop: "40px" }}
         >
           <MainRoutes />
+          <div style={{ height: "70px" }} />
           <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
             <WhatsApp
               onClick={handleClick}

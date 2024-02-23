@@ -45,6 +45,8 @@ export const Post = ({ post }) => {
           borderRadius: "8px",
           marginLeft: "10px",
           maxWidth: "calc(100% - 20px)",
+          height: "calc(100% - 20px)",
+
           objectFit: "fill",
         }}
         component="img"
