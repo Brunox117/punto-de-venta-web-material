@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Slider from "react-slick";
+import { Box } from "@mui/system";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
@@ -11,6 +12,7 @@ import {
 } from "@mui/material";
 import "./Supplier.css"; // Importa los estilos CSS
 import { useSelector } from "react-redux";
+import { Title } from "../titles/Title";
 
 export const Suppliers = () => {
   const sliderRef = useRef(null); // Referencia al Slider
@@ -59,6 +61,9 @@ export const Suppliers = () => {
 
   return (
     <Grid item sx={{ justifyContent: "center", background: '#f5e8db', marginTop: '5'}}>
+      <Box display="flex" paddingTop="80px" justifyContent="center" alignItems="center" width="100%">
+        <Title title={'Nuestros'} subtitle={'Proveedores'} />
+      </Box>
       <Slider {...settings} ref={sliderRef} arrows={false}>
         {suppliers.map((supplier, index) => (
           <div key={index}>

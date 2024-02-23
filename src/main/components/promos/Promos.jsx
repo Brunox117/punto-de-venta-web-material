@@ -1,15 +1,17 @@
 import { useSelector } from "react-redux";
 import { Promo } from "./Promo";
+import { Grid } from "@mui/material";
+
 export const Promos = () => {
   const { promos } = useSelector((state) => state.firebase);
   return (
-    <div>
+    <Grid container sx={{ paddingTop: '80px' }}>
       {promos.map((promo) => (
         <Promo
           key={promo.id}
           promo={promo}
         />
       ))}
-    </div>
+    </Grid>
   );
 };

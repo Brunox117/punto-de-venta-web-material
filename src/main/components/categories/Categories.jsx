@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Category } from "./Category";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef, useState } from "react";
+import { Title } from "../titles/Title";
 
 export const Categories = () => {
   const sliderRef = useRef(null); // Referencia al Slider
@@ -66,6 +67,9 @@ export const Categories = () => {
     }
   }}
 >
+<Box display="flex" padding="50px" justifyContent="center" alignItems="center" width="100%">
+        <Title title={'Nuestros'} subtitle={'Productos'} />
+      </Box>
   {categories.map((category) => (
     <Grid item key={category.id} xs={12} sm={6} md={4} lg={3} xl={2}>
       <Category category={category}/>

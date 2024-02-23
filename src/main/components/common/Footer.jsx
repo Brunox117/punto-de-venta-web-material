@@ -6,26 +6,26 @@ const useStyles = makeStyles((theme) => ({
     paddingTopTop: "30px",
     flexGrow: 1,
     backgroundColor: "#e8d8c8",
-    color: "#fff",
+    color: "#c4885d",
     padding: "20px 0",
   },
   logo: {
     height: "80px",
   },
   socialIcon: {
-    color: "#fff",
+    color: "#c4885d",
     fontSize: "40px",
   },
   phoneNumber: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    color: "#fff",
+    color: "#c4885d",
     fontSize: "16px",
     fontWeight: "bold",
   },
   phoneIcon: {
-    color: "#fff",
+    color: "#c4885d",
     fontSize: "30px",
   },
 }));
@@ -58,7 +58,7 @@ export const Footer = () => {
             <Grid item>
               <a href="https://www.tiktok.com/@tupuntodeventa">
                 <svg
-                  fill="#fff"
+                  fill="#c4885d"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 50 50"
                   width="40px"
