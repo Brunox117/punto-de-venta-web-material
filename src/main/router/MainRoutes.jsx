@@ -1,14 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AbarroTipsView, HomeView, ProductsView, SucursalesView, AboutUsView } from "../views";
-import { useBanners, useCategories, usePosts, useProducts, useSuppliers } from "../../hooks/firebaseDB/getFromFirebaseDB";
+import { useBanners, useBranches, useCategories, usePosts, usePromos, useProducts, useSuppliers } from "../../hooks/firebaseDB/getFromFirebaseDB";
 
 export const MainRoutes = () => {
   useProducts();
+  useBranches();
   useBanners();
   useCategories();
   useSuppliers();
   usePosts();
+  usePromos();
   return (
     <Routes>
       <Route path="/" element={<HomeView />} />

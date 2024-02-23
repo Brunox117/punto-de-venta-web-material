@@ -1,9 +1,8 @@
-import { Grid } from "@mui/material";
 import { Banners } from "../components/banners/Banners";
 import { Categories } from "../components/categories/Categories";
-import { Products } from "../components/productos/Products";
 import { Suppliers } from "../components/suppliers/Suppliers";
 import { Subscribe } from "../components/common/Subscribe";
+import { Promos } from "../components/promos/Promos";
 
 export const HomeView = () => {
   return (
@@ -11,6 +10,8 @@ export const HomeView = () => {
       <Banners />
 
       <Suppliers />
+
+      <Promos />
 
       <Categories />
 

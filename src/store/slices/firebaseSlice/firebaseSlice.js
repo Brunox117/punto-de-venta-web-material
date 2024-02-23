@@ -9,6 +9,7 @@ export const firebaseSlice = createSlice({
         posts: [],
         branches: [],
         suppliers: [],
+        promos: [],
     },
     reducers: {
         setBanners: (state, action) => {
@@ -29,6 +30,9 @@ export const firebaseSlice = createSlice({
         setSuppliers: (state, action) => {
             state.suppliers = action.payload;
         },
+        setPromos: (state, action) => {
+            state.promos = action.payload;
+        },
     }
 });
 
@@ -40,5 +44,6 @@ export const {
     setCategories, 
     setPosts, 
     setBranches, 
-    setSuppliers
+    setSuppliers,
+    setPromos,
  } = firebaseSlice.actions;

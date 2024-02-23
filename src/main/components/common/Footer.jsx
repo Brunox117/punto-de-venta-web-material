@@ -1,42 +1,32 @@
-import { CardMedia, Grid, makeStyles } from "@material-ui/core";
+import { CardMedia, Grid, Typography, makeStyles } from "@material-ui/core";
+import { Facebook, Instagram, WhatsApp } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    paddingTopTop: "30px",
     flexGrow: 1,
+    backgroundColor: "#e8d8c8",
+    color: "#fff",
+    padding: "20px 0",
   },
-  navButton: {
-    marginLeft: theme.spacing(3),
-    transition: "transform 0.2s",
-    "&:hover": {
-      transform: "scale(1.1)",
-    },
+  logo: {
+    height: "80px",
+  },
+  socialIcon: {
+    color: "#fff",
+    fontSize: "40px",
   },
   phoneNumber: {
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "right",
-    color: "#c4885d",
-    fontSize: "5px", // Tamaño de fuente más grande
-    fontWeight: "bold", // Negritas
+    color: "#fff",
+    fontSize: "16px",
+    fontWeight: "bold",
   },
-  logoContainer: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "left",
-  },
-  appBar: {
-    backgroundColor: "#e8d8c8",
-    height: "80px",
-  },
-  navButtonText: {
-    marginTop: "20px",
-    marginBottom: "20px",
-    color: "#000",
-    fontSize: "1.5em", // Tamaño de fuente más grande
-    fontWeight: "bold", // Negritas
-  },
-  drawerPaper: {
-    width: 240,
+  phoneIcon: {
+    color: "#fff",
+    fontSize: "30px",
   },
 }));
 
@@ -44,12 +34,48 @@ export const Footer = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Grid container justifyContent="space-between" alignItems="center">
+      <Grid container justifyContent="space-around" alignItems="center">
         <Grid item>
-          <CardMedia image="https://images-ext-2.discordapp.net/external/si8K-NoJTR8WFbiUL9zps1hsfIPf8bY_OA_FF4Qfcfo/%3Falt%3Dmedia%26token%3Ddb38230d-ab6e-4ec2-83ff-2fb4c656ae68/https/firebasestorage.googleapis.com/v0/b/punto-de-venta-web-881ad.appspot.com/o/abarrotito.png?format=webp&quality=lossless&width=603&height=661"></CardMedia>
+          <CardMedia
+            component="img"
+            alt="Logo"
+            className={classes.logo}
+            image="https://firebasestorage.googleapis.com/v0/b/punto-de-venta-web-881ad.appspot.com/o/abarrotito.png?alt=media&token=db38230d-ab6e-4ec2-83ff-2fb4c656ae68"
+          />
         </Grid>
-        <Grid item></Grid>
-        <Grid item>NUMERO DE TELEFONO</Grid>
+        <Grid item>
+          <Grid container spacing={2} alignItems="center" justifyContent="center">
+            <Grid item>
+              <a href="https://web.facebook.com/TuPuntodeVenta/">
+                <Facebook className={classes.socialIcon} />
+              </a>
+            </Grid>
+            <Grid item>
+              <a href="https://www.instagram.com/tiendapuntodeventa/">
+                <Instagram className={classes.socialIcon} />
+              </a>
+            </Grid>
+            <Grid item>
+              <a href="https://www.tiktok.com/@tupuntodeventa">
+                <svg
+                  fill="#fff"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  width="40px"
+                  height="40px"
+                >
+                  <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
+                </svg>
+              </a>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <div className={classes.phoneNumber}>
+            <WhatsApp className={classes.phoneIcon} />
+            <Typography variant="h6">123-456-7890</Typography>
+          </div>
+        </Grid>
       </Grid>
     </div>
   );

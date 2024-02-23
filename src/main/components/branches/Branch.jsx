@@ -1,4 +1,5 @@
-import { Card, CardContent, CardMedia, Typography, Grid, Button, IconButton, Box } from '@mui/material';
+import * as React from "react";
+import { Card, CardContent, CardMedia, Typography, Grid, Button, Box } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -9,7 +10,7 @@ export const Branch = ({branch}) => {
     window.open(fullUrl, "_blank");
   };
   return (
-    <Card sx={{ maxWidth: 400, backgroundColor: '#f7f7f7' }}>
+    <Card sx={{ maxWidth: 400, backgroundColor: '#faf5ee' }}>
       <CardMedia
         component="img"
         height="180"
@@ -23,13 +24,16 @@ export const Branch = ({branch}) => {
             {branch.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <LocationOnIcon /> {branch.address}
+            <LocationOnIcon sx={{ color: '#f77e0a' }} />
+            <br />
+            {branch.address}
+            <br />
           </Typography>
         </Box>
         <Grid container spacing={1}>
           <Grid item xs={6}>
             <Typography variant="body2" color="text.secondary">
-              <AccessTimeIcon />
+              <AccessTimeIcon sx={{ color: '#f77e0a' }} />
               <br />
               {branch.schedule}
               <br />
@@ -40,6 +44,16 @@ export const Branch = ({branch}) => {
               variant="contained"
               color="primary"
               size="small"
+              sx={{
+                backgroundColor: '#ffffff',
+                color: '#f77e0a', // Color del texto sin seleccionar
+                borderColor: '#f77e0a',
+                '&:hover': {
+                  backgroundColor: '##f77e0a',
+                  color: '#ffffff', // Color del texto en hover
+                  borderColor: '##f77e0a',
+                }
+              }}
               startIcon={<WhatsAppIcon />}
               onClick={() => openLinkInNewTab(branch.number)}
               target="_blank"
@@ -52,4 +66,3 @@ export const Branch = ({branch}) => {
     </Card>
   );
 };
-
