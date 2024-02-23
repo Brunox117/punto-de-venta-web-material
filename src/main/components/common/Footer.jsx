@@ -3,11 +3,11 @@ import { Facebook, Instagram, WhatsApp } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTopTop: "30px",
-    flexGrow: 1,
+    //paddingTop: "30px",
+    flexGrow: 0,
     backgroundColor: "#e8d8c8",
     color: "#c4885d",
-    padding: "20px 0",
+    // padding: "20px 0",
   },
   logo: {
     height: "80px",
