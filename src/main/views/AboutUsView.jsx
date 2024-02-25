@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { Facebook, Instagram } from "@material-ui/icons";
+import { Facebook, Instagram } from "@mui/icons-material";
 import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   root: {

@@ -1,9 +1,7 @@
-import { Button } from "@mui/material";
+import { WhatsApp } from "@mui/icons-material";
 import { Footer } from "../components/common/Footer";
 import { NavBar } from "../components/common/NavBar";
 import { MainRoutes } from "../router/MainRoutes";
-import { WhatsApp } from "@material-ui/icons";
-
 export const MainPage = () => {
   const handleClick = () => {
     window.open("https://www.facebook.com/abarrotech", "_blank");

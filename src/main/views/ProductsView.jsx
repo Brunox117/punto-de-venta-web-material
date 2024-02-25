@@ -1,9 +1,9 @@
 // ProductsView.jsx
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Products } from "../components/productos/Products";
 import { useSelector } from "react-redux";
 import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   root: {

@@ -1,65 +1,59 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Menu, WhatsApp } from "@mui/icons-material";
 import {
   AppBar,
-  Toolbar,
-  Typography,
   Button,
-  makeStyles,
-  IconButton,
+  Drawer,
   Grid,
   Hidden,
-  Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemText,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import WhatsAppIcon from "@material-ui/icons/WhatsApp";
-import { Link } from "react-router-dom";
-import { Menu, WhatsApp } from "@mui/icons-material";
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { styled } from "@mui/system";
+import { useTheme } from "@emotion/react";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+const NavButton = styled(Button)(({ theme }) => ({
+  marginLeft: theme.spacing(3),
+  transition: "transform 0.2s",
+  "&:hover": {
+    transform: "scale(1.1)",
   },
-  navButton: {
-    marginLeft: theme.spacing(3),
-    transition: "transform 0.2s",
-    "&:hover": {
-      transform: "scale(1.1)",
-    },
-  },
-  phoneNumber: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "right",
-    color: "#c4885d",
-    fontSize: "5px", // Tamaño de fuente más grande
-    fontWeight: "bold", // Negritas
-  },
-  logoContainer: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "left",
-  },
-  appBar: {
-    backgroundColor: "#e8d8c8",
-    height: "80px",
-  },
-  navButtonText: {
-    marginTop: "20px",
-    marginBottom: "20px",
-    color: "#000",
-    fontSize: "1.5em", // Tamaño de fuente más grande
-    fontWeight: "bold", // Negritas
-  },
-  drawerPaper: {
-    width: 240,
+}));
+
+const PhoneNumber = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-end",
+  color: "#c4885d",
+  fontSize: "1.5em",
+  fontWeight: "bold",
+}));
+
+const LogoContainer = styled(Grid)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "left",
+});
+
+const AppBarStyled = styled(AppBar)({
+  backgroundColor: "#e8d8c8",
+  height: "80px",
+});
+
+const DrawerPaperStyled = styled(Drawer)(({ theme }) => ({
+  width: 240,
+  [theme.breakpoints.up("md")]: {
+    display: "none",
   },
 }));
 
 export const NavBar = () => {
-  const classes = useStyles();
+  const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -85,11 +79,11 @@ export const NavBar = () => {
   );
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar} elevation={0}>
+    <div>
+      <AppBarStyled position="static" elevation={0}>
         <Toolbar>
           <Grid container alignItems="center">
-            <Grid item xs={6} md={2} className={classes.logoContainer}>
+            <LogoContainer item xs={6} md={2}>
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/punto-de-venta-web-881ad.appspot.com/o/puntodeventaLOGO.png?alt=media&token=3aa59e83-d74b-42c1-b246-ec2817aee931"
                 alt="Logo"
@@ -99,68 +93,28 @@ export const NavBar = () => {
                   marginLeft: "0px",
                 }}
               />
-            </Grid>
+            </LogoContainer>
             <Hidden mdDown>
               <Grid item xs={6} md={7} style={{ textAlign: "left" }}>
-                <Button
-                  component={Link}
-                  to="/"
-                  style={{ color: "#c4885d" }}
-                  className={classes.navButton}
-                >
-                  <Typography className={classes.navButtonText}>
-                    Inicio
-                  </Typography>
-                </Button>
-                <Button
-                  component={Link}
-                  to="/productos"
-                  style={{ color: "#c4885d" }}
-                  className={classes.navButton}
-                >
-                  <Typography className={classes.navButtonText}>
-                    Productos
-                  </Typography>
-                </Button>
-                <Button
-                  component={Link}
-                  to="/abarrotips"
-                  style={{ color: "#c4885d" }}
-                  className={classes.navButton}
-                >
-                  <Typography className={classes.navButtonText}>
-                    AbarroTips
-                  </Typography>
-                </Button>
-                <Button
-                  component={Link}
-                  to="/sucursales"
-                  style={{ color: "#c4885d" }}
-                  className={classes.navButton}
-                >
-                  <Typography className={classes.navButtonText}>
-                    Sucursales
-                  </Typography>
-                </Button>
-                <Button
-                  component={Link}
-                  to="/nosotros"
-                  style={{ color: "#c4885d" }}
-                  className={classes.navButton}
-                >
-                  <Typography className={classes.navButtonText}>
-                    Sobre Nosotros
-                  </Typography>
-                </Button>
+                {navLinks.map((link, index) => (
+                  <NavButton
+                    key={index}
+                    component={Link}
+                    to={link.path}
+                    style={{ color: "#c4885d" }}
+                  >
+                    <Typography variant="h6">{link.title}</Typography>
+                  </NavButton>
+                ))}
               </Grid>
             </Hidden>
             <Hidden smDown>
-              <Grid item xs={6} md={3} className={classes.phoneNumber}>
+              <PhoneNumber item xs={6} md={3}>
                 <Typography variant="body1">123-456-7890</Typography>
                 <IconButton>
                   <WhatsApp style={{ color: "#c4885d" }} />
                 </IconButton>
-              </Grid>
+              </PhoneNumber>
             </Hidden>
             <Hidden mdUp>
               <Grid
@@ -180,19 +134,18 @@ export const NavBar = () => {
                 >
                   <Menu style={{ color: "#c4885d" }} />
                 </IconButton>
-                <Drawer
+                <DrawerPaperStyled
                   anchor="right"
                   open={drawerOpen}
                   onClose={toggleDrawer}
-                  classes={{ paper: classes.drawerPaper }}
                 >
                   {listItems}
-                </Drawer>
+                </DrawerPaperStyled>
               </Grid>
             </Hidden>
           </Grid>
         </Toolbar>
-      </AppBar>
+      </AppBarStyled>
     </div>
   );
 };
