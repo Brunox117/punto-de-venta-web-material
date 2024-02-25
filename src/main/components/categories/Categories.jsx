@@ -1,47 +1,11 @@
 import { useSelector } from "react-redux";
 import { Box, Grid } from "@mui/material";
 import { Category } from "./Category";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useRef, useState } from "react";
 import { Title } from "../titles/Title";
 
 export const Categories = () => {
-  const sliderRef = useRef(null); // Referencia al Slider
-  const [selectedSupplierIndex, setSelectedSupplierIndex] = useState(-1);
-
   const { categories } = useSelector((state) => state.firebase);
 
-  const handleMouseEnter = (index) => {
-    setSelectedSupplierIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setSelectedSupplierIndex(-1);
-  };
-
-  const calculateSlidesToShow = () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1280) {
-      return 4; // Para pantallas grandes, muestra 3 slides
-    } else if (screenWidth >= 768) {
-      return 2; // Para pantallas medianas, muestra 2 slides
-    } else {
-      return 1; // Para pantallas pequeñas, muestra 1 slide
-    }
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: calculateSlidesToShow(), // Llama a una función para calcular el número de slides a mostrar
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 4000,
-    cssEase: "linear",
-    swipeToSlide: true,
-  };
   return (
     <div style={{ backgroundColor: "#f5e8db"}}>
 
