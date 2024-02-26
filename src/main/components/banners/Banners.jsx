@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay, Navigation } from 'swiper/modules';
 import "swiper/swiper-bundle.css"; // Asegúrate de importar los estilos de Swiper
-
+import './Banners.css';
 export const Banners = () => {
   const { banners } = useSelector((state) => state.firebase);
   return (
@@ -24,10 +24,12 @@ export const Banners = () => {
           <Card
             className="banner-card"
             sx={{
+              marginTop: "1rem",
               borderRadius: "12px",
             }}
           >
             <CardMedia
+            className="banner-image"
               component="img"
               image={banner.imageUrl}
               style={{

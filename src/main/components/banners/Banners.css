@@ -1,0 +1,10 @@
+.banner-image {
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 600px) {
+    .banner-image {
+      height: 28vh !important; /* Ajusta el tamaño del CardMedia en dispositivos móviles */
+    }
+  }
+  
