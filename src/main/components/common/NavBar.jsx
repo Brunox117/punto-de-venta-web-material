@@ -15,7 +15,6 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import { useTheme } from "@emotion/react";
 
 const NavButton = styled(Button)(({ theme }) => ({
   marginLeft: theme.spacing(3),
@@ -47,13 +46,9 @@ const AppBarStyled = styled(AppBar)({
 
 const DrawerPaperStyled = styled(Drawer)(({ theme }) => ({
   width: 240,
-  [theme.breakpoints.up("md")]: {
-    display: "none",
-  },
 }));
 
 export const NavBar = () => {
-  const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -109,8 +104,6 @@ export const NavBar = () => {
                   </NavButton>
                 ))}
               </Grid>
-            </Hidden>
-            <Hidden smDown>
               <PhoneNumber item xs={6} md={3}>
                 <Typography variant="body1">123-456-7890</Typography>
                 <IconButton>

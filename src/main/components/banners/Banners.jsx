@@ -36,7 +36,7 @@ export const Banners = () => {
                 objectFit: "fill",
                 width: "100%",
                 justifyContent: "center",
-                height: "65vh",
+                height: "60vh",
               }} // Ajusta la imagen al tamaño del contenedor sin recortarla
             />
           </Card>

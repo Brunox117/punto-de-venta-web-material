@@ -11,8 +11,8 @@
 
 .icon {
     color: #c4885d;
-    height: 100px !important;
-    width: 100px !important;
+    height: 85px !important;
+    width: 85px !important;
 }
 
 @media (min-width: 600px) {
