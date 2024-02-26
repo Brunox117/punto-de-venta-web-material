@@ -64,3 +64,20 @@ export const loadPromos = async () => {
   });
   return promos;
 }
+export const loadProductsPagination = async (pageSize, lastDoc) => {
+  let queryRef = collection(FirebaseDB, "/products/");
+  
+  if (lastDoc) {
+    queryRef = query(queryRef, startAfter(lastDoc));
+  }
+  
+  queryRef = limit(queryRef, pageSize);
+
+  const docs = await getDocs(queryRef);
+  const products = [];
+  docs.forEach((product) => {
+    products.push({ id: product.id, ...product.data() });
+  });
+  return products;
+};
+

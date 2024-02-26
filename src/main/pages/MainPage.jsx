@@ -2,30 +2,28 @@ import { WhatsApp } from "@mui/icons-material";
 import { Footer } from "../components/common/Footer";
 import { NavBar } from "../components/common/NavBar";
 import { MainRoutes } from "../router/MainRoutes";
+import "./MainPage.css";
 export const MainPage = () => {
   const handleClick = () => {
     window.open("https://www.facebook.com/abarrotech", "_blank");
   };
   return (
     <>
-      <div style={{ backgroundColor: "#f5e8db" }}>
+      <div className="background">
         <NavBar />
+        <div className="divisor" />
         <div
-          style={{ backgroundColor: "#c4885d", height: "2px", opacity: "50%" }}
-        />
-        <div
-          style={{ marginLeft: "40px", marginRight: "40px", marginTop: "40px" }}
+          className="mainPageContainer"
         >
-          <MainRoutes />
-          <div style={{ height: "70px" }} />
-          <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
+          <div className="whatsappContainer">
             <WhatsApp
               onClick={handleClick}
               style={{ color: "#c4885d", fontSize: "60px" }}
             />
           </div>
+          <MainRoutes />
         </div>
-          <Footer />
+        <Footer />
       </div>
     </>
   );

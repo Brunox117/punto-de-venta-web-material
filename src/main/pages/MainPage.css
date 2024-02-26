@@ -1,0 +1,24 @@
+.background {
+    background-color: #f5e8db;
+}
+
+.divisor {
+    background-color: #c4885d;
+    height: 2px;
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 1024px) {
+    .mainPageContainer {
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 40px;
+    }
+}
+
+.whatsappContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 70px;
+}
