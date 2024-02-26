@@ -4,6 +4,7 @@ import { Products } from "../components/productos/Products";
 import { useSelector } from "react-redux";
 import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter";
 import { makeStyles } from "@mui/styles";
+import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -14,6 +15,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 export const ProductsView = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const categoryFromParams = queryParams.get("categoria");
+  console.log(categoryFromParams);
   const [searchProduct, setSearchProduct] = useState([]);
   const { products: productsFromFirebase, categories } = useSelector(
     (state) => state.firebase
@@ -51,6 +56,7 @@ export const ProductsView = () => {
   return (
     <div className={classes.root}>
       <SearchbarWithFilter
+        initialCategory={categoryFromParams}
         searchProducts={filterProducts}
         categories={categories}
       />

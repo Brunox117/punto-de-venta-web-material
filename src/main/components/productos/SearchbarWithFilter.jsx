@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormControl,
   InputLabel,
@@ -10,9 +10,17 @@ import {
 } from "@mui/material";
 import { Clear } from "@mui/icons-material";
 
-export const SearchbarWithFilter = ({ searchProducts, categories }) => {
+export const SearchbarWithFilter = ({
+  searchProducts,
+  categories,
+  initialCategory = "",
+}) => {
   const [searchValue, setSearchValue] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
 
   const handleSearchChange = (newValue) => {
     setSearchValue(newValue);
