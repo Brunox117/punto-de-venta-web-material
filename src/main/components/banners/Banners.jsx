@@ -14,8 +14,8 @@ export const Banners = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        navigation={true}
         modules={[Autoplay, Navigation, EffectFade]}
+        navigation={true}
         className="mySwiper"
         effect={"fade"}
       >

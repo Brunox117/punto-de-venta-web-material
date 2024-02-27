@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, WhatsApp } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material";
 import {
   AppBar,
   Button,
@@ -15,22 +15,57 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import '../../../styles.css'
+import { useDispatch } from "react-redux";
+import { toggleMode } from "../../../store/slices/themeSlice";
+import { useTheme } from "@emotion/react";
 
-const NavButton = styled(Button)(({ theme }) => ({
-  marginLeft: theme.spacing(3),
-  transition: "transform 0.2s",
-  "&:hover": {
-    transform: "scale(1.1)",
-  },
-}));
+const NavButton = styled(Button)`
+  && {
+    font-size: 18px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    &:focus, &:hover {
+      color: #fff;
+    }
+    &:focus:after, &:hover:after {
+      width: 100%;
+      left: 0%;
+    }
+    &:after {
+      content: "";
+      pointer-events: none;
+      bottom: -2px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #ffffff;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: width, left;
+    }
+  }
+`;
 
-const PhoneNumber = styled(Grid)(({ theme }) => ({
+const PhoneNumber = styled(Grid)(({  }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
   color: "#c4885d",
-  fontSize: "1.5em",
+  fontSize: "1.1em",
   fontWeight: "bold",
+  height: "60px",
+  width: "120px",
 }));
 
 const LogoContainer = styled(Grid)({
@@ -39,16 +74,36 @@ const LogoContainer = styled(Grid)({
   justifyContent: "left",
 });
 
-const AppBarStyled = styled(AppBar)({
-  backgroundColor: "#e8d8c8",
-  height: "80px",
-});
+
+const AppBarStyled = styled(AppBar)(({ theme }) => ({
+  paddingTop: "25px",
+  backgroundImage: `linear-gradient(to right, ${theme.palette.appbar.primary}, ${theme.palette.appbar.secondary})`,
+  height: '120px',
+}));
+
 
 const DrawerPaperStyled = styled(Drawer)(({ theme }) => ({
   width: 240,
 }));
 
+const SliderContainer = styled(Grid)({
+  display: "flex",
+  alignItems: "right",
+  justifyContent: "flex-end",
+});
+
+const MenuButtonContainer = styled(Grid)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-end",
+});
+
 export const NavBar = () => {
+  const theme = useTheme();
+  const dispatch = useDispatch();
+  const toggleSlide = () => {
+    dispatch(toggleMode());
+  }
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -69,8 +124,18 @@ export const NavBar = () => {
         <ListItem button key={index} component={Link} to={link.path}>
           <ListItemText primary={link.title} />
         </ListItem>
+        
       ))}
+      <ListItem button>
+      <SliderContainer item md={2}>
+        <label className="switch">
+          <input type="checkbox" onClick={toggleSlide}/>
+          <span className="slider" />
+        </label>
+      </SliderContainer>
+      </ListItem>
     </List>
+    
   );
 
   return (
@@ -98,17 +163,19 @@ export const NavBar = () => {
                     key={index}
                     component={Link}
                     to={link.path}
-                    style={{ color: "#c4885d" }}
+                    style={{ color: theme.palette.fonts.navbar }}
                   >
                     <Typography variant="h6">{link.title}</Typography>
                   </NavButton>
                 ))}
               </Grid>
               <PhoneNumber item xs={6} md={3}>
-                <Typography variant="body1">123-456-7890</Typography>
-                <IconButton>
-                  <WhatsApp style={{ color: "#c4885d" }} />
-                </IconButton>
+              <SliderContainer item >
+                <label className="switch">
+                  <input type="checkbox" onClick={toggleSlide}/>
+                  <span className="slider" />
+                </label>
+      </SliderContainer>
               </PhoneNumber>
             </Hidden>
             <Hidden mdUp>

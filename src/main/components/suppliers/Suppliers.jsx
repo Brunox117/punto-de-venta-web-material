@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Title } from "../titles/Title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 export const Suppliers = () => {
   const sliderRef = useRef(null); // Referencia al Slider
@@ -33,7 +33,7 @@ export const Suppliers = () => {
   return (
     <Grid
       item
-      sx={{ justifyContent: "center", background: "#f5e8db", marginTop: "5" }}
+      sx={{ justifyContent: "center", marginTop: "5" }}
     >
       <Box
         display="flex"
@@ -45,24 +45,16 @@ export const Suppliers = () => {
         <Title title={"Nuestros"} subtitle={"Proveedores"} />
       </Box>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        modules={[Pagination, Autoplay]}
       >
         {suppliers.map((supplier, index) => (
           <SwiperSlide key={index}>
@@ -76,7 +68,7 @@ export const Suppliers = () => {
                     : ""
                 }`}
                 sx={{
-                  backgroundColor: "#f5e8db", // Color de fondo del Card
+                  backgroundColor: "#fff", // Color de fondo del Card
                   borderRadius: "8px",
                   boxShadow: "none",
                   width: "100%",

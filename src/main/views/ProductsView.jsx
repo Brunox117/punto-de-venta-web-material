@@ -9,7 +9,6 @@ import { useLocation } from "react-router-dom";
 const useStyles = makeStyles(() => ({
   root: {
     padding: 30,
-    backgroundColor: "#f5e8db",
     minHeight: "100vh",
   },
 }));

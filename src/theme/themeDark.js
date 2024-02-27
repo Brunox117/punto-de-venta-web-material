@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 
-export const theme = createTheme({
+export const darkTheme = createTheme({
   palette: {
     primary: {
       main: "#bfeb00",
@@ -15,17 +15,17 @@ export const theme = createTheme({
       main: red.A400,
     },
     appbar: {
-      primary: '#E27009',
+      primary: '#b25a0b',
       secondary: '#f2b255',
     },
     background: {
-      main: '#F9F9F9'
+      main: '#202020'
     },
     cardbg: {
       main: '#FFFFFF'
     },
     fonts: {
-      navbar: '#F6FFF2'
+      main: '#b07034'
     },
   },
 });

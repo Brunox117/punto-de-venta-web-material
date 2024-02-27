@@ -8,7 +8,7 @@ export const Categories = () => {
 
   return (
     
-      <div style={{ backgroundColor: "#f5e8db" }}>
+      <div>
         <Box
           display="flex"
           padding="20px"

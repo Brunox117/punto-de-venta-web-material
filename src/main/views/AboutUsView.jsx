@@ -27,7 +27,6 @@ export const AboutUsView = () => {
         <Card
           sx={{
             borderRadius: "10px",
-            backgroundColor: "#faf5ee",
             margin: "2px",
           }}
         >

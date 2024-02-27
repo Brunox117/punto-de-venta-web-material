@@ -3341,6 +3341,11 @@ vite@^5.1.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
+webkit@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/webkit/-/webkit-0.0.0.tgz#3ab2afb17115c2a394a16c3f367f34cee19fcefb"
+  integrity sha512-YVSDLyRsq0oQkIDHMTV6HbZOjq691WIQGQZPOsyptx85DDJN4cnqYWWSaQQjLwniVMdAfgfFrcgezdJdHmvcDQ==
+
 websocket-driver@>=0.5.1:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.7.4.tgz#89ad5295bbf64b480abcba31e4953aca706f5760"
