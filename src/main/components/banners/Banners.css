@@ -1,10 +1,21 @@
-.banner-image {
-    border-radius: 12px;
-  }
+.yourSwiper {
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+}
+
+.yourSwiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yourSwiper-slide img {
+  display: block;
   
-  @media (max-width: 600px) {
-    .banner-image {
-      height: 28vh !important; /* Ajusta el tamaño del CardMedia en dispositivos móviles */
-    }
-  }
-  
+  object-fit: cover;
+}

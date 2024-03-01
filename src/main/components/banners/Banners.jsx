@@ -16,11 +16,11 @@ export const Banners = () => {
         }}
         modules={[Autoplay, Navigation, EffectFade]}
         navigation={true}
-        className="mySwiper"
+        className="yourSwiper"
         effect={"fade"}
       >
       {banners.map((banner) => (
-        <SwiperSlide key={banner.id}>
+        <SwiperSlide className="yourSwiper-slide" key={banner.id}>
           <Card
             className="banner-card"
             sx={{
@@ -34,9 +34,9 @@ export const Banners = () => {
               image={banner.imageUrl}
               style={{
                 objectFit: "fill",
-                width: "100%",
+                aspectRatio: "16/9",
                 justifyContent: "center",
-                height: "60vh",
+                alignItems: "center"
               }} // Ajusta la imagen al tamaño del contenedor sin recortarla
             />
           </Card>
