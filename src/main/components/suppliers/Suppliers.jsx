@@ -47,6 +47,7 @@ export const Suppliers = () => {
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
+        className="noSwiper"
         pagination={{
           clickable: true,
         }}
@@ -68,7 +69,7 @@ export const Suppliers = () => {
                     : ""
                 }`}
                 sx={{
-                  backgroundColor: "#fff", // Color de fondo del Card
+                  backgroundColor: "hsla(0, 0%, 0%, 0)", // Color de fondo del Card
                   borderRadius: "8px",
                   boxShadow: "none",
                   width: "100%",
@@ -115,9 +116,10 @@ export const Suppliers = () => {
                       borderRadius: 20,
                       width: "40%",
                       "&:hover": {
-                        backgroundColor: "#f77e0a",
-                        borderColor: "#f77e0a",
-                        color: "white",
+                        color: '#ffffff',
+                        backgroundColor: "#f77e0a !important",
+                        borderColor: "#f77e0a !important",
+                        boxShadow: "none !important",
                       },
                     }}
                   >
@@ -125,6 +127,7 @@ export const Suppliers = () => {
                   </Button>
                 </CardContent>
               </Card>
+              <br />
             </div>
           </SwiperSlide>
         ))}
@@ -132,89 +135,3 @@ export const Suppliers = () => {
     </Grid>
   );
 };
-
-{
-  /* <Slider {...settings} ref={sliderRef} arrows={false}>
-        {suppliers.map((supplier, index) => (
-          <div key={index}>
-            <Card
-              key={index}
-              className={`supplier-card ${
-                index === sliderRef.current?.slickCurrentSlide ||
-                index === selectedSupplierIndex
-                  ? "supplier-centered"
-                  : ""
-              }`}
-              sx={{
-                backgroundColor: '#f5e8db', // Color de fondo del Card
-                borderRadius: "8px",
-                boxShadow: "none",
-                width: "100%",
-                mt: 2,
-                mb: 2,
-              }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  sx={{
-                    borderRadius: "8px",
-                    height: 500,
-                    width: 450,
-                    objectFit: "cover",
-                  }}
-                  image={supplier.imageUrl}
-                  title={supplier.name}
-                />
-              </div>
-              <CardContent
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Button
-  variant="outlined"
-  onClick={() => openLinkInNewTab(supplier.siteLink)}
-  sx={{
-    fontWeight: 'bold',
-    borderColor: 'secondary.main',
-    backgroundColor: 'transparent', // Cambiado de bgcolor a backgroundColor
-    color: 'secondary.main',
-    borderRadius: 20,
-    width: "40%",
-    '&:hover': {
-      backgroundColor: '#f77e0a',
-      borderColor: '#f77e0a',
-      color: 'white',
-    },
-  }}
->
-  VISITANOS
-</Button>
-
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </Slider>
-      <style>
-        {`
-          .slick-dots li button:before {
-            color: #f77e0a !important;
-          }
-          .slick-dots li.slick-active button:before {
-            color: #f77e0a !important;
-          }
-        `}
-      </style> */
-}

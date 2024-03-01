@@ -25,7 +25,8 @@ export const theme = createTheme({
       main: '#FFFFFF'
     },
     fonts: {
-      navbar: '#F6FFF2'
+      navbar: '#F6FFF2',
+      category: '#202020'
     },
   },
 });

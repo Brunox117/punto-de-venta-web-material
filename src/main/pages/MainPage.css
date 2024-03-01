@@ -8,13 +8,13 @@
     opacity: 0.5;
 }
 
-@media screen and (min-width: 1024px) {
-    .mainPageContainer {
-        margin-left: 40px;
-        margin-right: 40px;
-        margin-top: 40px;
-    }
+/* @media screen and (min-width: 1024px) { */
+.mainPageContainer {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
 }
+/* } */
 
 .whatsappContainer {
     position: fixed;

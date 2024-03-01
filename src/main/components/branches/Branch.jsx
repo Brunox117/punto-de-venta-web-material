@@ -10,7 +10,7 @@ export const Branch = ({branch}) => {
     window.open(fullUrl, "_blank");
   };
   return (
-    <Card sx={{ maxWidth: 400, backgroundColor: '#faf5ee' }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
         height="180"

@@ -8,7 +8,7 @@ export const Categories = () => {
 
   return (
     
-      <div>
+      <>
         <Box
           display="flex"
           padding="20px"
@@ -18,35 +18,14 @@ export const Categories = () => {
         >
           <Title title={"Nuestros"} subtitle={"Productos"} />
         </Box>
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{
-            padding: {
-              xs: 0,
-              sm: 2,
-              md: 12,
-              lg: 4,
-              xl: 5,
-            },
-            ml: {
-              xs: 12,
-              sm: 3,
-              md: 4,
-              lg: 5,
-              xl: 4,
-            },
-            mb: 2,
-          }}
-        >
+        <Grid container justifyContent="center" spacing={2} sx={{mb: 3}}>
           {categories.map((category) => (
-            <Grid item key={category.id} xs={12} sm={6} md={4} lg={3} xl={2}>
+            <Grid item key={category.id} xs={12} sm={5} md={6} lg={3} xl={2}>
               <Category category={category} />
             </Grid>
           ))}
         </Grid>
-      </div>
+      </>
 
   );
 };

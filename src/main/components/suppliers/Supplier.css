@@ -15,4 +15,9 @@
     margin: 10px 10px 10px 10px !important; /* Agrega márgenes a los lados de cada tarjeta */
     background-color: '#e8d8c8' !important;
   }
-  
+.noSwiper{
+  background-color: hsla(0, 0%, 0%, 0);
+}
+.noSwiper-supplier{
+  background-color: hsla(0, 0%, 0%, 0);
+}
