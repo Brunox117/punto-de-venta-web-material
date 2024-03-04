@@ -7,7 +7,7 @@ import './SwiperStyles.css'
 
 export const AboutCards = () => {
   return (
-    <Grid container>
+    <Grid container justifyContent='space-around'>
         <Grid item xs={12} sm={6} md={4}>
         <Swiper
             effect={'cards'}
@@ -27,7 +27,7 @@ export const AboutCards = () => {
         </Swiper>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-            Aqui va otra cosa
+        Aqui va otra cosa
         </Grid>
     </Grid>
   )

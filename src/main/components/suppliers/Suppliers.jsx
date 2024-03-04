@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Box } from "@mui/system";
 import { Card, CardContent, CardMedia, Button, Grid } from "@mui/material";
-import "./Supplier.css"; // Importa los estilos CSS
 import { useSelector } from "react-redux";
 import { Title } from "../titles/Title";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,10 +8,32 @@ import "swiper/css";
 import { Pagination, Autoplay } from "swiper/modules";
 
 export const Suppliers = () => {
-  const sliderRef = useRef(null); // Referencia al Slider
+  const sliderRef = useRef(null);
   const [selectedSupplierIndex, setSelectedSupplierIndex] = useState(-1);
+  const [slidesPerView, setSlidesPerView] = useState(3); // Estado para el número de slides por vista
 
   const { suppliers } = useSelector((state) => state.firebase);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setSlidesPerView(1); // Para pantallas pequeñas (menos de 600px de ancho)
+      } else if (window.innerWidth < 960) {
+        setSlidesPerView(2); // Para pantallas medianas (entre 600px y 960px de ancho)
+      } else {
+        setSlidesPerView(4); // Para pantallas grandes (más de 960px de ancho)
+      }
+    };
+
+    // Llamar a la función handleResize al cargar la página y al cambiar el tamaño de la ventana
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Limpiar el evento del listener al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleMouseEnter = (index) => {
     setSelectedSupplierIndex(index);
@@ -31,10 +52,7 @@ export const Suppliers = () => {
   };
 
   return (
-    <Grid
-      item
-      sx={{ justifyContent: "center", marginTop: "5" }}
-    >
+    <Grid item sx={{ justifyContent: "center", marginTop: "5" }}>
       <Box
         display="flex"
         paddingTop="80px"
@@ -45,7 +63,7 @@ export const Suppliers = () => {
         <Title title={"Nuestros"} subtitle={"Proveedores"} />
       </Box>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={slidesPerView} // Utilizar el estado local para el número de slides por vista
         spaceBetween={30}
         className="noSwiper"
         pagination={{
@@ -116,7 +134,7 @@ export const Suppliers = () => {
                       borderRadius: 20,
                       width: "40%",
                       "&:hover": {
-                        color: '#ffffff',
+                        color: "#ffffff",
                         backgroundColor: "#f77e0a !important",
                         borderColor: "#f77e0a !important",
                         boxShadow: "none !important",

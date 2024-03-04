@@ -77,7 +77,7 @@ const LogoContainer = styled(Grid)({
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   paddingTop: "25px",
-  backgroundImage: `linear-gradient(to right, ${theme.palette.appbar.primary}, ${theme.palette.appbar.secondary})`,
+  backgroundImage: `linear-gradient(to bottom, ${theme.palette.appbar.primary}, ${theme.palette.appbar.secondary})`,
   height: '120px',
 }));
 

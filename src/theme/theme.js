@@ -18,6 +18,11 @@ export const theme = createTheme({
       primary: '#E27009',
       secondary: '#f2b255',
     },
+    footer: {
+      primary: '#f2b255',
+      secondary: '#E27009',
+      icons: '#F9F9F9'
+    },
     background: {
       main: '#F9F9F9'
     },

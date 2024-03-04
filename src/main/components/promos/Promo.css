@@ -1,0 +1,37 @@
+.img-md {
+  width: 40.5vw; /* Tamaño fijo para dispositivos medianos */
+  height: calc(40.5vw * 9 / 16); /* 16:9 aspect ratio */
+  aspect-ratio: 16/9;
+  object-fit: fill; /* Para mantener la relación de aspecto */
+}
+
+.img-bg {
+  width: 90vw; /* Tamaño fijo para dispositivos medianos */
+  height: calc(90vw * 9 /32); /* 32:9 aspect ratio */
+  aspect-ratio: 32/9;
+  object-fit: fill; /* Para mantener la relación de aspecto */
+}
+
+@media (max-width: 600px) {
+  .img-md {
+    width: 75vw; /* Ajuste de tamaño para pantallas pequeñas */
+    height: calc(75vw * 9 / 16); /* Mantener relación de aspecto de 16/9 */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .img-md {
+    width: 45vw;
+    height: calc(45vw * 9 / 16); 
+  }
+}
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: portrait) {
+    .img-md {
+      width: 40vw;
+      height: calc(40vw * 9 / 16); 
+    }
+}
