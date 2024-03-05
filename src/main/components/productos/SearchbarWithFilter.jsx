@@ -39,8 +39,9 @@ export const SearchbarWithFilter = ({
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{ display: "flex", alignItems: "center"}}>
       <TextField
+        sx={{backgroundColor: 'white', borderRadius: 1}}
         variant="outlined"
         placeholder="Buscar por nombre"
         value={searchValue}

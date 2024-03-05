@@ -32,7 +32,11 @@ export const theme = createTheme({
     },
     fonts: {
       navbar: '#F6FFF2',
-      category: '#202020'
+      category: '#202020',
     },
+    searchbarAndFilter: {
+      searchbar: '#F9F9F9',
+      filter: '#FFFFFF',
+    }
   },
 });

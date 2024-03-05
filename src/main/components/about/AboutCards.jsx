@@ -32,10 +32,10 @@ export const AboutCards = () => {
   data-swiper-parallax="-23%"
 ></div>
         <SwiperSlide className="mySwiper-slide">
+          <div className="text" data-swiper-parallax="-100">
           <div className="title" data-swiper-parallax="-300">
             Slide 1
           </div>
-          <div className="text" data-swiper-parallax="-100">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
@@ -48,10 +48,10 @@ export const AboutCards = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="mySwiper-slide">
+          <div className="text" data-swiper-parallax="-100">
           <div className="title" data-swiper-parallax="-300">
             Slide 2
           </div>
-          <div className="text" data-swiper-parallax="-100">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
@@ -64,10 +64,10 @@ export const AboutCards = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="mySwiper-slide">
+          <div className="text" data-swiper-parallax="-100">
           <div className="title" data-swiper-parallax="-300">
             Slide 3
           </div>
-          <div className="text" data-swiper-parallax="-100">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla

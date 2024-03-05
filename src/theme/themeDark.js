@@ -14,18 +14,28 @@ export const darkTheme = createTheme({
     error: {
       main: red.A400,
     },
+    footer: {
+      primary: '#f2b255',
+      secondary: '#E27009',
+      icons: '#F9F9F9'
+    },
     appbar: {
       primary: '#b25a0b',
       secondary: '#f2b255',
     },
     background: {
-      main: '#202020'
+      main: '#0A0A0A '
     },
     cardbg: {
       main: '#FFFFFF'
     },
     fonts: {
-      main: '#b07034'
+      main: '#b07034',
+      category: '#F9F9F9',
     },
+    searchbarAndFilter: {
+      searchbar: '#F9F9F9',
+      filter: '#FFFFFF',
+    }
   },
 });
