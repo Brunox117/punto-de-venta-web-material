@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter";
 import { makeStyles } from "@mui/styles";
 import { useLocation } from "react-router-dom";
-
+import { Categories } from "../components/categories/Categories";
 const useStyles = makeStyles(() => ({
   root: {
     padding: 30,
@@ -54,6 +54,7 @@ export const ProductsView = () => {
 
   return (
     <div className={classes.root}>
+      <Categories />
       <SearchbarWithFilter
         initialCategory={categoryFromParams}
         searchProducts={filterProducts}

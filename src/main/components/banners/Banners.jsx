@@ -16,8 +16,8 @@ export const Banners = () => {
         }}
         modules={[Autoplay, Navigation, EffectFade]}
         navigation={true}
-        className="yourSwiper"
         effect={"fade"}
+        className="yourSwiper"
       >
       {banners.map((banner) => (
         <SwiperSlide className="yourSwiper-slide" key={banner.id}>
