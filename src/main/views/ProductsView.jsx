@@ -3,15 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Products } from "../components/productos/Products";
 import { useSelector } from "react-redux";
 import { SearchbarWithFilter } from "../components/productos/SearchbarWithFilter";
-import { makeStyles } from "@mui/styles";
 import { useLocation } from "react-router-dom";
 import { Categories } from "../components/categories/Categories";
-const useStyles = makeStyles(() => ({
-  root: {
-    padding: 30,
-    minHeight: "100vh",
-  },
-}));
+import { Grid } from "@mui/material";
 
 export const ProductsView = () => {
   const location = useLocation();
@@ -50,10 +44,13 @@ export const ProductsView = () => {
     setSearchProduct(filteredProducts);
   };
 
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <Grid
+      container
+      justifyContent="center"
+      alignContent="center"
+      sx={{ mb: 4 }}
+    >
       <Categories />
       <SearchbarWithFilter
         initialCategory={categoryFromParams}
@@ -61,6 +58,6 @@ export const ProductsView = () => {
         categories={categories}
       />
       <Products products={searchProduct} />
-    </div>
+    </Grid>
   );
 };

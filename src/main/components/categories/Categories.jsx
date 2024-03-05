@@ -16,7 +16,7 @@ export const Categories = () => {
           alignItems="center"
           width="100%"
         >
-          <Title title={"Nuestros"} subtitle={"Productos"} />
+          <Title title={""} subtitle={"Categorías"} />
         </Box>
         <Grid container justifyContent="center" spacing={2} sx={{mb: 3}}>
           {categories.map((category) => (
