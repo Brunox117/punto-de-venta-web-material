@@ -34,8 +34,8 @@ export const darkTheme = createTheme({
       category: '#F9F9F9',
     },
     searchbarAndFilter: {
-      searchbar: '#F9F9F9',
-      filter: '#FFFFFF',
+      searchbar: '#E1E1E1',
+      filter: '#E1E1E1',
     }
   },
 });

@@ -17,6 +17,7 @@ export const Category = ({ category }) => {
         >
           <div
             style={{
+              marginTop: '1vh',
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

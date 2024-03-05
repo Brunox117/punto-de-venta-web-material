@@ -36,7 +36,7 @@ export const theme = createTheme({
     },
     searchbarAndFilter: {
       searchbar: '#F9F9F9',
-      filter: '#FFFFFF',
+      filter: '#F9F9F9',
     }
   },
 });

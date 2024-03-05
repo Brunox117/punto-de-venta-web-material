@@ -9,12 +9,15 @@ import {
   InputAdornment,
 } from "@mui/material";
 import { Clear } from "@mui/icons-material";
+import { useTheme } from "@emotion/react";
 
 export const SearchbarWithFilter = ({
   searchProducts,
   categories,
   initialCategory = "",
 }) => {
+  const theme = useTheme();
+
   const [searchValue, setSearchValue] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 
@@ -41,7 +44,7 @@ export const SearchbarWithFilter = ({
   return (
     <div style={{ display: "flex", alignItems: "center"}}>
       <TextField
-        sx={{backgroundColor: 'white', borderRadius: 1}}
+        sx={{backgroundColor: theme.palette.searchbarAndFilter.searchbar, borderRadius: 1}}
         variant="outlined"
         placeholder="Buscar por nombre"
         value={searchValue}
@@ -58,10 +61,13 @@ export const SearchbarWithFilter = ({
           ),
         }}
       />
-      <FormControl variant="outlined">
-        <InputLabel id="category-label">Filtrar por categoría</InputLabel>
+      <FormControl variant="outlined" 
+      sx={{backgroundColor: theme.palette.searchbarAndFilter.filter, marginLeft: 1 }}>
+        <InputLabel id="category-label"
+        sx={{ minWidth: 200}}
+        >Filtrar por categoría</InputLabel>
         <Select
-          sx={{ minWidth: 200 }}
+          sx={{ minWidth: 200, color: '#727272' }}
           labelId="category-label"
           value={selectedCategory}
           onChange={handleCategoryChange}
