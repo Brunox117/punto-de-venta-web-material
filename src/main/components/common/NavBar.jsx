@@ -194,7 +194,7 @@ export const NavBar = () => {
                   aria-label="menu"
                   onClick={toggleDrawer}
                 >
-                  <Menu style={{ color: "#c4885d" }} />
+                  <Menu style={{ color: "#F9F9F9" }} />
                 </IconButton>
                 <DrawerPaperStyled
                   anchor="right"

@@ -7,8 +7,8 @@
 }
 
 .img-bg {
-  width: 90vw; /* Tamaño fijo para dispositivos medianos */
-  height: calc(90vw * 9 / 32); /* 32:9 aspect ratio */
+  width: 88.5vw; /* Tamaño fijo para dispositivos medianos */
+  height: calc(88.5vw * 9 / 32); /* 32:9 aspect ratio */
   aspect-ratio: 32/9;
   object-fit: fill; /* Para mantener la relación de aspecto */
   border-radius: 8px;
@@ -24,8 +24,8 @@
 
 @media (min-width: 600px) and (max-width: 959px) {
   .img-md {
-    width: 45vw;
-    height: calc(45vw * 9 / 16);
+    width: 41vw;
+    height: calc(41vw * 9 / 16);
     border-radius: 8px;
   }
 }
