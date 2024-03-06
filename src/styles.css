@@ -147,8 +147,8 @@ button-navbar:after {
   background-color: rgba(172, 183, 247, 0.10) !important;
   border-radius: 12px !important;
   border: 1px solid rgba(255, 255, 255, 0.125) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
   backdrop-filter: blur(25px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
 }
 
 .img-post{

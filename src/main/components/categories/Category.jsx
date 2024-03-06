@@ -7,10 +7,10 @@ export const Category = ({ category }) => {
   const { name, imageUrl } = category;
   const theme = useTheme();
   return (
-    <Link
-      to={`/productos?categoria=${category.name}`}
-      style={{ textDecoration: "none" }}
-    >
+    // <Link
+    //   to={`/productos?categoria=${category.name}`}
+    //   style={{ textDecoration: "none" }}
+    // >
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ margin: 1 }}>
         <Card
         class="card-category"
@@ -32,6 +32,6 @@ export const Category = ({ category }) => {
           </CardContent>
         </Card>
       </Grid>
-    </Link>
+    // </Link>
   );
 };
