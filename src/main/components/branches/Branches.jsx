@@ -15,7 +15,7 @@ export const Branches = () => {
   return (
     <Grid container spacing={2}>
       {branches.map((branch) => (
-        <Grid item xs={12} sm={6} md={4} key={branch.id} style={gridItemStyle}>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={branch.id} style={gridItemStyle}>
           <Branch branch={branch}/>
         </Grid>
       ))}
