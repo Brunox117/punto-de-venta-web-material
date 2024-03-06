@@ -6,8 +6,10 @@ import {
   Grid,
 } from "@mui/material";
 import "./Product.css";
+import { useTheme } from "@emotion/react";
 
 export const Product = ({ product }) => {
+  const theme = useTheme();
   const { name, price, imageUrl, categories } = product;
 
   return (
@@ -17,13 +19,13 @@ export const Product = ({ product }) => {
           <img class="img-product" src={imageUrl} />
         </div>
         <CardContent sx={{ textAlign: "center" }}>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" color={theme.palette.fonts.product}>
             {name}
           </Typography>
-          <Typography variant="body1" color="textSecondary">
+          <Typography variant="body1" color={theme.palette.fonts.product}>
             Precio: ${price}
           </Typography>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color={theme.palette.fonts.product}>
             Categorías:
           </Typography>
           <div
@@ -40,10 +42,10 @@ export const Product = ({ product }) => {
                 label={category}
                 variant="outlined"
                 style={{
-                  backgroundColor: "#F5FFFB",
+                  backgroundColor: theme.palette.chip.main,
                   // backgroundColor: "rgba(247, 126, 10, 0.15)",
-                  color: "#000",
                   margin: 2,
+                  color: theme.palette.fonts.product,
                 }}
               />
             ))}

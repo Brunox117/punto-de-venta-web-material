@@ -32,6 +32,10 @@ export const darkTheme = createTheme({
     fonts: {
       main: '#b07034',
       category: '#F9F9F9',
+      product: '#F9F9F9',
+    },
+    chip: {
+      main: '#818181',
     },
     searchbarAndFilter: {
       searchbar: '#E1E1E1',

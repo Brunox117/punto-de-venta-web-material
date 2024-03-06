@@ -9,9 +9,9 @@ export const HomeView = () => {
     <>
       <AboutCards />
 
-      <Banners />
-
       <Suppliers />
+
+      <Banners />
 
       <Promos />
 

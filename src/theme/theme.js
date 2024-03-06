@@ -33,6 +33,10 @@ export const theme = createTheme({
     fonts: {
       navbar: '#F6FFF2',
       category: '#202020',
+      product: '#202020',
+    },
+    chip: {
+      main: '#F4FFFB',
     },
     searchbarAndFilter: {
       searchbar: '#F9F9F9',
