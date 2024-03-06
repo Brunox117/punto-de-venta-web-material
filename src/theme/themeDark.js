@@ -15,13 +15,13 @@ export const darkTheme = createTheme({
       main: red.A400,
     },
     footer: {
-      primary: '#f2b255',
-      secondary: '#E27009',
+      primary: '#99b957',
+      secondary: '#71891a',
       icons: '#F9F9F9'
     },
     appbar: {
-      primary: '#b25a0b',
-      secondary: '#f2b255',
+      primary: '#71891a',
+      secondary: '#99b957',
     },
     background: {
       main: '#0A0A0A '
