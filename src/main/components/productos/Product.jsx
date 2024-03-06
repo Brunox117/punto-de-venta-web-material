@@ -1,7 +1,6 @@
 import {
   Card,
   CardContent,
-  CardMedia,
   Typography,
   Chip,
   Grid,
@@ -12,24 +11,11 @@ export const Product = ({ product }) => {
   const { name, price, imageUrl, categories } = product;
 
   return (
-    <Grid item xs={10} sm={10} md={10} lg={10} sx={{ mt: 4 }}>
+    <Grid item xs={11} sm={11} md={11} lg={11} sx={{ mt: 4 }}>
       <Card className="product-card">
         <div class="img-container">
           <img class="img-product" src={imageUrl} />
         </div>
-        {/* <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <CardMedia
-            sx={{ borderRadius: "8px", height: 180, width: 180, marginTop: 4 }}
-            image={imageUrl}
-            title={name}
-          />
-        </div> */}
         <CardContent sx={{ textAlign: "center" }}>
           <Typography gutterBottom variant="h5" component="div">
             {name}
@@ -54,7 +40,8 @@ export const Product = ({ product }) => {
                 label={category}
                 variant="outlined"
                 style={{
-                  backgroundColor: "rgba(247, 126, 10, 0.15)",
+                  backgroundColor: "#F5FFFB",
+                  // backgroundColor: "rgba(247, 126, 10, 0.15)",
                   color: "#000",
                   margin: 2,
                 }}

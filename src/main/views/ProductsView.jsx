@@ -11,7 +11,6 @@ export const ProductsView = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const categoryFromParams = queryParams.get("categoria");
-  console.log(categoryFromParams);
   const [searchProduct, setSearchProduct] = useState([]);
   const { products: productsFromFirebase, categories } = useSelector(
     (state) => state.firebase
