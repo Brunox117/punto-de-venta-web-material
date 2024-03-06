@@ -63,7 +63,7 @@ export const Branch = ({ branch }) => {
               color="primary"
               size="small"
               sx={{
-                backgroundColor: "#ffffff",
+                backgroundColor: "#F9F9F9",
                 color: "#f77e0a", // Color del texto sin seleccionar
                 borderColor: "#f77e0a",
                 "&:hover": {
