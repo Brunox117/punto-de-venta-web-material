@@ -164,3 +164,14 @@ button-navbar:after {
   justify-content: center;
   align-items: center;
 }
+
+.navbar-container{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    margin-bottom: 5px;
+  }
+}

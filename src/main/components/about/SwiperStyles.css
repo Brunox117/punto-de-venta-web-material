@@ -30,7 +30,6 @@
   font-size: 2.5rem; /* Tamaño de fuente para el título */
   font-weight: bold; /* Hacer el título en negrita */
   text-align: center;
-  text-padding: 1rem; /* Espacio alrededor del título */
 }
 
 .ourSwiper-slide .text {
@@ -44,11 +43,23 @@
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 600px) {
+  .ourSwiper-slide {
+    padding: auto 40px;
+    justify-content: flex-start;
+  }
+  .ourSwiper{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
   .ourSwiper-slide .title {
+    padding-top: 0px;
     font-size: 1.5rem; /* Reducir el tamaño de fuente del título */
   }
   .ourSwiper-slide .text {
     font-size: 1rem; /* Reducir el tamaño de fuente del texto */
+    padding: 0px;
+    text-align: center;
+    max-width: 100%;
   }
 }
 
