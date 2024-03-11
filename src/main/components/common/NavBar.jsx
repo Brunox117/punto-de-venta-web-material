@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import '../../../styles.css'
+import "../../../styles.css";
 import { useDispatch } from "react-redux";
 import { toggleMode } from "../../../store/slices/themeSlice";
 import { useTheme } from "@emotion/react";
@@ -33,10 +33,12 @@ const NavButton = styled(Button)`
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       color: #fff;
     }
-    &:focus:after, &:hover:after {
+    &:focus:after,
+    &:hover:after {
       width: 100%;
       left: 0%;
     }
@@ -55,7 +57,7 @@ const NavButton = styled(Button)`
   }
 `;
 
-const PhoneNumber = styled(Grid)(({  }) => ({
+const PhoneNumber = styled(Grid)(({}) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -72,13 +74,11 @@ const LogoContainer = styled(Grid)({
   justifyContent: "left",
 });
 
-
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   paddingTop: "25px",
   backgroundImage: `linear-gradient(to bottom, ${theme.palette.appbar.primary}, ${theme.palette.appbar.secondary})`,
-  height: '120px',
+  height: "120px",
 }));
-
 
 const DrawerPaperStyled = styled(Drawer)(({ theme }) => ({
   width: 240,
@@ -90,13 +90,12 @@ const SliderContainer = styled(Grid)({
   justifyContent: "flex-end",
 });
 
-
 export const NavBar = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
   const toggleSlide = () => {
     dispatch(toggleMode());
-  }
+  };
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -116,18 +115,16 @@ export const NavBar = () => {
         <ListItem button key={index} component={Link} to={link.path}>
           <ListItemText primary={link.title} />
         </ListItem>
-        
       ))}
       <ListItem button>
-      <SliderContainer item md={2}>
-        <label className="switch">
-          <input type="checkbox" onClick={toggleSlide}/>
-          <span className="slider" />
-        </label>
-      </SliderContainer>
+        <SliderContainer item md={2}>
+          <label className="switch">
+            <input type="checkbox" onClick={toggleSlide} />
+            <span className="slider" />
+          </label>
+        </SliderContainer>
       </ListItem>
     </List>
-    
   );
 
   return (
@@ -162,12 +159,12 @@ export const NavBar = () => {
                 ))}
               </Grid>
               <PhoneNumber item xs={6} md={3}>
-              <SliderContainer item >
-                <label className="switch">
-                  <input type="checkbox" onClick={toggleSlide}/>
-                  <span className="slider" />
-                </label>
-      </SliderContainer>
+                <SliderContainer item>
+                  <label className="switch">
+                    <input type="checkbox" onClick={toggleSlide} />
+                    <span className="slider" />
+                  </label>
+                </SliderContainer>
               </PhoneNumber>
             </Hidden>
             <Hidden mdUp>

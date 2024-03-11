@@ -1,94 +1,118 @@
 import { Grid } from "@mui/material";
 import "swiper/css";
-import "swiper/css/effect-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import "./SwiperStyles.css";
+import { useTheme } from "@emotion/react";
 
 export const AboutCards = () => {
+  const theme = useTheme();
   return (
-    <Grid container justifyContent="center" sx={{ mb: 2 }}>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <Swiper
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          style={{
-            "--swiper-navigation-color": "transparent",
-            "--swiper-pagination-color": "transparent",
-          }}
-          speed={600}
-          parallax={true}
-          navigation={true}
-          modules={[Parallax, Pagination, Navigation, Autoplay]}
-          className="mySwiper"
+    <Swiper
+      className="ourSwiper"
+      centeredSlides={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay, EffectFade]}
+      effect={"fade"}
+    >
+      <SwiperSlide className="ourSwiper-slide">
+        <Grid
+          container
+          style={{ backgroundColor: theme.palette.background.main }}
         >
-          <div
-            slot="container-start"
-            className="parallax-bg"
-            style={{
-              backgroundImage:
-                "url(https://assets.eleventa.com/assets/blog/productos-abrir-tienda-abarrotes.webp)",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            data-swiper-parallax="-23%"
-          ></div>
-          <SwiperSlide className="mySwiper-slide">
-            <div className="text" data-swiper-parallax="-100">
-              <div className="title" data-swiper-parallax="-300">
-                Slide 1
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="mySwiper-slide">
-            <div className="text" data-swiper-parallax="-100">
-              <div className="title" data-swiper-parallax="-300">
-                Slide 2
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="mySwiper-slide">
-            <div className="text" data-swiper-parallax="-100">
-              <div className="title" data-swiper-parallax="-300">
-                Slide 3
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </Grid>
-      {/* <Grid item xs={12} sm={6} md={4}>
-        Aqui va otra cosa
-        </Grid> */}
-    </Grid>
+          <Grid
+            item
+            sm={12}
+            xl={5}
+          >
+            <h2
+              className="title"
+              style={{ color: theme.palette.fonts.category }}
+            >
+              Variedad de Productos
+            </h2>
+            <p className="text" style={{ color: theme.palette.fonts.category }}>
+              Somos una empresa mayorista con una amplia gama de productos,
+              desde alimentos básicos hasta artículos no comestibles. Nuestra
+              selección está diseñada para satisfacer las necesidades de
+              tienderos y consumidores finales.
+            </p>
+          </Grid>
+          <Grid item sm={12} xl={5}>
+            <img className="ourSwiper-img" src="../../../../about1.svg" />
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+      <SwiperSlide className="ourSwiper-slide">
+        <Grid
+          container
+          style={{ backgroundColor: theme.palette.background.main }}
+        >
+          <Grid item sm={12} xl={5}>
+            <h2
+              className="title"
+              style={{ color: theme.palette.fonts.category }}
+            >
+              Servicio al Cliente Destacado
+            </h2>
+            <p className="text" style={{ color: theme.palette.fonts.category }}>
+              En nuestra tienda, los clientes eligen sus productos en persona y
+              se los llevan directamente. Sin complicaciones ni esperas.
+              ¡Bienvenidos a una experiencia de compra sin igual! 🛒✨
+            </p>
+          </Grid>
+          <Grid item sm={12} xl={5}>
+            <img className="ourSwiper-img" src="../../../../about2.svg" />
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+      <SwiperSlide className="ourSwiper-slide">
+        <Grid
+          container
+          style={{ backgroundColor: theme.palette.background.main }}
+        >
+          <Grid item sm={12} xl={5}>
+            <h2
+              className="title"
+              style={{ color: theme.palette.fonts.category }}
+            >
+              Aliados en las Ganancias
+            </h2>
+            <p className="text" style={{ color: theme.palette.fonts.category }}>
+              Tu éxito es nuestro objetivo. Ofrecemos precios competitivos y
+              descuentos por volumen para maximizar tus beneficios.
+            </p>
+          </Grid>
+          <Grid item sm={12} xl={5}>
+            <img className="ourSwiper-img" src="../../../../about3.svg" />
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+      <SwiperSlide className="ourSwiper-slide">
+        <Grid
+          container
+          style={{ backgroundColor: theme.palette.background.main }}
+        >
+          <Grid item sm={12} xl={5}>
+            <h2
+              className="title"
+              style={{ color: theme.palette.fonts.category }}
+            >
+              Experiencia de Compra Única
+            </h2>
+            <p className="text" style={{ color: theme.palette.fonts.category }}>
+              Queremos que tu experiencia con nosotros sea especial. Bienvenidos
+              a nuestra familia de clientes satisfechos. 🛒🌟
+            </p>
+          </Grid>
+          <Grid item sm={12} xl={5}>
+            <img className="ourSwiper-img" src="../../../../about4.svg" />
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+    </Swiper>
   );
 };

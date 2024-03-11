@@ -15,7 +15,6 @@ export const HomeView = () => {
 
       <Promos />
 
-
       {/* <Subscribe /> */}
     </>
   );

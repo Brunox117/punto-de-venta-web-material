@@ -16,7 +16,7 @@ export const Promo = ({ promo }) => {
       {align !== 1 ? (
         <>
           <Grid item xs={12} md={12} lg={12} xl={12}>
-            <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={12} sx={{mb: 2}}>
               <img src={imageUrlG} alt="Imagen 3" className="img-bg" />
             </Grid>
             <Grid container spacing={4}>
