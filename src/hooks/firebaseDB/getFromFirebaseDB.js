@@ -9,6 +9,7 @@ import {
   startLoadingSuppliers,
   startLoadingPromos,
   startLoadingDiscountedProducts,
+  startLoadingPaginationProducts,
 } from "../../store/slices/firebaseSlice/thunks";
 
 export const useCategories = () => {
@@ -57,6 +58,13 @@ export const usePromos = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startLoadingPromos());
+  }, []);
+}
+
+export const usePaginationProducts = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(startLoadingPaginationProducts(2));
   }, []);
 }
 

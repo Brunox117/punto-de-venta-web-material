@@ -15,16 +15,16 @@ import { useTheme } from "@emotion/react";
 export const SearchbarWithFilter = ({
   searchProducts,
   categories,
-  initialCategory = "",
+  // initialCategory = "",
 }) => {
   const theme = useTheme();
 
   const [searchValue, setSearchValue] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-  useEffect(() => {
-    setSelectedCategory(initialCategory);
-  }, [initialCategory]);
+  // useEffect(() => {
+  //   setSelectedCategory('TODAS');
+  // }, [initialCategory]);
 
   const handleSearchChange = (newValue) => {
     setSearchValue(newValue);
@@ -43,7 +43,7 @@ export const SearchbarWithFilter = ({
   };
 
   return (
-    <Grid container justifyContent='center' spacing={2}>
+    <Grid container justifyContent="center" spacing={2}>
       <Grid item>
         <TextField
           sx={{

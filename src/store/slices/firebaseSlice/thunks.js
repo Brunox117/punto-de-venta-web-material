@@ -7,6 +7,7 @@ import {
   loadSuppliers,
   loadPromos,
   loadDiscountedProducts,
+  loadPaginationProducts
 } from "../../../helpers/firebaseDB/loadFromFirebase";
 import {
   setBanners,
@@ -65,6 +66,13 @@ export const startLoadingPromos = () => {
   return async (dispatch) => {
     const promos = await loadPromos();
     dispatch(setPromos(promos));
+  };
+}
+
+export const startLoadingPaginationProducts = (page) => {
+  return async (dispatch) => {
+    const {products} = await loadPaginationProducts(page, null);
+    dispatch(setProducts(products));
   };
 }
 

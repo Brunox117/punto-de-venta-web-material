@@ -15,6 +15,7 @@ import {
   useProducts,
   useSuppliers,
   useDiscountedProducts,
+  usePaginationProducts,
 } from "../../hooks/firebaseDB/getFromFirebaseDB";
 
 export const MainRoutes = () => {
@@ -26,6 +27,7 @@ export const MainRoutes = () => {
   usePosts();
   usePromos();
   useDiscountedProducts();
+  // usePaginationProducts();
   return (
     <Routes>
       <Route path="/" element={<HomeView />} />

@@ -1,4 +1,11 @@
-import { collection, getDocs, query, where } from "firebase/firestore/lite";
+import {
+  collection,
+  getDocs,
+  limit,
+  query,
+  startAfter,
+  where,
+} from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 
 export const loadCategories = async () => {
@@ -64,21 +71,36 @@ export const loadPromos = async () => {
   });
   return promos;
 };
-export const loadProductsPagination = async (pageSize, lastDoc) => {
-  let queryRef = collection(FirebaseDB, "/products/");
 
-  if (lastDoc) {
-    queryRef = query(queryRef, startAfter(lastDoc));
+export const loadPaginationProducts = async (pageSize, lastDoc) => {
+  try {
+    let queryRef;
+
+    if (lastDoc) {
+      queryRef = query(
+        collection(FirebaseDB, "/products/"),
+        startAfter(lastDoc),
+        limit(pageSize)
+      );
+    } else {
+      queryRef = query(collection(FirebaseDB, "/products/"), limit(pageSize));
+    }
+
+    const docs = await getDocs(queryRef);
+    const products = [];
+
+    docs.forEach((product) => {
+      products.push({ id: product.id, ...product.data() });
+    });
+
+    // Devolver solo el ID del último documento, si está presente
+    const lastDocId = lastDoc ? lastDoc.id : null;
+
+    return { products, lastDocId }; // Devolver solo el ID del último documento
+  } catch (error) {
+    console.error("Error al cargar los productos paginados:", error);
+    throw error;
   }
-
-  queryRef = limit(queryRef, pageSize);
-
-  const docs = await getDocs(queryRef);
-  const products = [];
-  docs.forEach((product) => {
-    products.push({ id: product.id, ...product.data() });
-  });
-  return products;
 };
 
 export const loadDiscountedProducts = async () => {

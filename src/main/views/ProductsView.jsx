@@ -8,9 +8,12 @@ import { Categories } from "../components/categories/Categories";
 import { Grid } from "@mui/material";
 
 export const ProductsView = () => {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const categoryFromParams = queryParams.get("categoria");
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // let categoryFromParams = queryParams.get("categoria");
+  // if (categoryFromParams === null) {
+  //   categoryFromParams = "";
+  // }
   const [searchProduct, setSearchProduct] = useState([]);
   const { products: productsFromFirebase, categories } = useSelector(
     (state) => state.firebase
@@ -52,7 +55,6 @@ export const ProductsView = () => {
     >
       <Categories />
       <SearchbarWithFilter
-        initialCategory={categoryFromParams}
         searchProducts={filterProducts}
         categories={categories}
       />
