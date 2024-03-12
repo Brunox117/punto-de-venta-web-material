@@ -10,6 +10,7 @@ export const firebaseSlice = createSlice({
         branches: [],
         suppliers: [],
         promos: [],
+        discountedProducts: [],
     },
     reducers: {
         setBanners: (state, action) => {
@@ -33,12 +34,16 @@ export const firebaseSlice = createSlice({
         setPromos: (state, action) => {
             state.promos = action.payload;
         },
+        setDiscountedProducts: (state, action) => {
+            state.discountedProducts = action.payload;
+        }
     }
 });
 
 
 // Action creators are generated for each case reducer function
 export const { 
+    setDiscountedProducts,
     setBanners, 
     setProducts, 
     setCategories, 

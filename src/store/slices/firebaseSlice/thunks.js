@@ -6,6 +6,7 @@ import {
   loadProducts,
   loadSuppliers,
   loadPromos,
+  loadDiscountedProducts,
 } from "../../../helpers/firebaseDB/loadFromFirebase";
 import {
   setBanners,
@@ -15,6 +16,7 @@ import {
   setProducts,
   setSuppliers,
   setPromos,
+  setDiscountedProducts,
 } from "./firebaseSlice";
 
 export const startLoadingCategories = () => {
@@ -63,5 +65,12 @@ export const startLoadingPromos = () => {
   return async (dispatch) => {
     const promos = await loadPromos();
     dispatch(setPromos(promos));
+  };
+}
+
+export const startLoadingDiscountedProducts = () => {
+  return async (dispatch) => {
+    const discountedProducts = await loadDiscountedProducts();
+    dispatch(setDiscountedProducts(discountedProducts));
   };
 }

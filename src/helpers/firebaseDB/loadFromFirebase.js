@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 
 export const loadCategories = async () => {
