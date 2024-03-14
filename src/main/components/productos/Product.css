@@ -13,7 +13,7 @@
 }
 
 .img-product {
-  object-fit: cover !important;
+  object-fit: contain !important;
   height: 27vh;
   width: 20vw;
   margin: 1px !important;

@@ -1,0 +1,56 @@
+.img-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Media query para pantallas pequeñas (por ejemplo, teléfonos móviles) */
+@media only screen and (max-width: 600px) {
+  .img-discount {
+    object-fit: contain !important;
+    height: 50vh;
+    width: 50vw;
+    margin: 1px !important;
+  }
+}
+
+/* Media query para pantallas medianas (por ejemplo, tabletas) */
+@media only screen and (min-width: 601px) and (max-width: 960px) {
+  .img-discount {
+    object-fit: contain !important;
+    height: 23vh;
+    width: 23vw;
+    margin: 1px !important;
+  }
+}
+
+/* Media query para pantallas grandes (por ejemplo, computadoras de escritorio) */
+@media only screen and (min-width: 961px) {
+  .img-discount {
+    object-fit: contain !important;
+    height: 30vh;
+    width: 30vw;
+    margin: 1px !important;
+  }
+}
+.discount-icon {
+  align-items: top;
+  justify-content: right;
+}
+.original-price {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+.discount-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff5c00;
+}
+
+.noSwiper {
+  background-color: hsla(0, 0%, 0%, 0) !important;
+}
+.noSwiper-supplier {
+  background-color: hsla(0, 0%, 0%, 0) !important;
+}
