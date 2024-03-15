@@ -4,6 +4,7 @@ import { Suppliers } from "../components/suppliers/Suppliers";
 import { Promos } from "../components/promos/Promos";
 import { AboutCards } from "../components/about/AboutCards";
 import { Discounts } from "../components/discounts/Discounts";
+import Subscription from "../components/common/Subscription";
 
 export const HomeView = () => {
   return (
@@ -18,7 +19,7 @@ export const HomeView = () => {
 
       <Promos />
 
-      {/* <Subscribe /> */}
+      <Subscription />
     </>
   );
 };

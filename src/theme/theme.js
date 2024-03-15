@@ -41,6 +41,16 @@ export const theme = createTheme({
     searchbarAndFilter: {
       searchbar: '#F9F9F9',
       filter: '#F9F9F9',
-    }
+    },
+    subscription: {
+      background: '#f9f9f9', 
+      card: '#ffffff', 
+      text: '#333333', 
+      heading: '#333333', 
+      input: '#f0f0f0', 
+      button: '#f9a826', 
+      buttonText: '#000000', 
+      link: '#f9a826', 
+    },
   },
 });

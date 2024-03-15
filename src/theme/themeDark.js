@@ -40,6 +40,16 @@ export const darkTheme = createTheme({
     searchbarAndFilter: {
       searchbar: '#E1E1E1',
       filter: '#E1E1E1',
-    }
+    },
+    subscription: {
+      background: '#0a0a0a',
+      card: '#2c2c2c',
+      text: '#ffffff',
+      heading: '#ffffff',
+      input: '#3c3c3c',
+      button: '#a7ce3d',
+      buttonText: '#000000',
+      link: '#a7ce3d',
+    },
   },
 });
